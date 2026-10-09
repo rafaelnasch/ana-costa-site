@@ -1,0 +1,34 @@
+/* Ana Paula Costa · Nutricionista — sistema Rota ap. · tokens v1.2 (out/2026) */
+/* Gerado por _dev/sync_marca.py a partir de marca-final/tokens.css. Não editar à mão. */
+:root{
+  --cor-salvia:#63AF9C; /* Sálvia Ana · rgb(99,175,156) */
+  --cor-algodao:#F2F0EB; /* Algodão · rgb(242,240,235) */
+  --cor-bruma:#D8ECE5; /* Bruma · rgb(216,236,229) */
+  --cor-mar:#103A40; /* Mar Fundo · rgb(16,58,64) */
+  --cor-salvia-funda:#2F6E60; /* Sálvia Funda · rgb(47,110,96) */
+  --cor-pedra:#E4E0D8; /* Pedra · rgb(228,224,216) */
+  --cor-caramelo:#C99A68; /* Caramelo · rgb(201,154,104) */
+  --cor-caramelo-tostado:#8A5A2E; /* Caramelo Tostado · rgb(138,90,46) */
+  --cor-ouro-velho:#C9B583; /* Ouro Velho · rgb(201,181,131) */
+  --cor-grafite:#2B2724; /* Grafite Quente · rgb(43,39,36) */
+  --cor-salvia-clara:#A9D3C6; /* Sálvia Clara (derivada) · rgb(169,211,198) */
+  --cor-mar-medio:#2A5C63; /* Mar Médio (derivada) · rgb(42,92,99) */
+  --cor-mar-superficie:#17464D; /* Mar Superfície (derivada) · rgb(23,70,77) */
+  --fonte-titulo:'Literata',Georgia,serif;
+  --fonte-texto:'Ana Numerais','Atkinson Hyperlegible Next',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --peso-titulo:580; --opsz-titulo:60;
+  --texto-display:clamp(44px,6.2vw,72px); --texto-h1:clamp(36px,4.6vw,52px); --texto-h2:clamp(29px,3.4vw,38px); --texto-h3:clamp(22px,2.2vw,26px);
+  --texto-corpo:18px; --texto-botao:17px; --texto-rotulo:14px; --texto-legenda:15px; --entrelinha-corpo:1.65; --tracking-rotulo:.14em;
+  --esp-1:4px; --esp-2:8px; --esp-3:12px; --esp-4:16px; --esp-5:24px; --esp-6:32px; --esp-7:48px; --esp-8:64px; --esp-9:96px; --esp-10:128px;
+  --raio-p:8px; --raio-m:14px; --raio-g:24px; --raio-pilula:999px;
+  --sombra-suave:0 1px 2px rgba(16,58,64,.06),0 6px 18px rgba(16,58,64,.08);
+  --sombra-cartao:0 2px 4px rgba(16,58,64,.06),0 14px 36px rgba(16,58,64,.10);
+  --mare:cubic-bezier(.33,0,.15,1); --t-rapido:160ms; --t-base:240ms; --t-entrada:480ms; --t-traco:1200ms;
+  /* modo ativo (padrão = pós-parto/morno) */
+  --fundo:var(--cor-algodao); --superficie:var(--cor-pedra); --texto:var(--cor-grafite); --titulo:var(--cor-mar); --acento:var(--cor-caramelo-tostado); --ponto:var(--cor-caramelo);
+}
+@media (max-width:640px){:root{--texto-corpo:17px}}
+[data-fase="gestacao"]{--fundo:var(--cor-bruma); --superficie:var(--cor-algodao); --titulo:var(--cor-mar); --acento:var(--cor-salvia-funda); --ponto:var(--cor-salvia-funda)}
+[data-fase="pos-parto"]{--fundo:var(--cor-algodao); --superficie:var(--cor-pedra); --titulo:var(--cor-mar); --acento:var(--cor-caramelo-tostado); --ponto:var(--cor-caramelo)}
+[data-fase="40-mais"],[data-fase="40"]{--fundo:var(--cor-mar); --superficie:var(--cor-mar-superficie); --texto:var(--cor-algodao); --titulo:var(--cor-algodao); --acento:var(--cor-ouro-velho); --ponto:var(--cor-ouro-velho); --texto-corpo:20px}
+@media (max-width:640px){[data-fase="40-mais"],[data-fase="40"]{--texto-corpo:19px}}

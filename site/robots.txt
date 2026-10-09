@@ -1,0 +1,6 @@
+# Prévia em aprovação: nada deve ser indexado ainda.
+# Na publicação: trocar "Disallow: /" por "Allow: /" e manter a linha do Sitemap.
+User-agent: *
+Disallow: /
+
+Sitemap: https://rafaelnasch.github.io/ana-costa-site/sitemap.xml

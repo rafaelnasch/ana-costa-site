@@ -1,0 +1,7 @@
+_projeto/
+_dev/.venv/
+_dev/qa/
+*.bak
+.DS_Store
+__pycache__/
+_dev/.cache/
