@@ -1,0 +1,21 @@
+{
+  "_nota": "Gerado por _dev/fotos_sobre.py. Fotos reais da Ana; só ela no quadro.",
+  "fotos": {
+    "crossfit": {
+      "id": "crossfit",
+      "alt": "Ana Paula Costa no box de crossfit, de regata azul-marinho, erguendo um kettlebell acima da cabeça com os braços estendidos",
+      "uso": "Sobre, capítulo 3 (atleta). Recorte fechado: só a Ana no quadro",
+      "origem": "fotos/22-crossfit-kettlebell-acima-da-cabeca.jpg",
+      "width": 432,
+      "height": 576,
+      "larguras": [
+        320,
+        432
+      ],
+      "formatos": [
+        "webp",
+        "avif"
+      ]
+    }
+  }
+}

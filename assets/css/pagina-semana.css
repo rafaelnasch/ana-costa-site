@@ -1,0 +1,533 @@
+/* Semana Bem Nutrida · página de vendas
+   CSS próprio da página (prefixo .sbn / escopo body.pg-semana).
+   Usa as variáveis de tokens.css (gerado por _dev/sync_marca.py).
+   Enquanto o site.css global não existe, esta folha traz também a base mínima da página
+   (fontes, tipografia, botão, cabeçalho e rodapé), toda dentro do escopo .pg-semana.
+   O que deveria ir para o global está anotado em _projeto/pedidos-css.md. */
+
+@font-face{font-family:'Literata';src:url('../fonts/literata-var.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Literata';src:url('../fonts/literata-italic-var.woff2') format('woff2');font-weight:400 700;font-style:italic;font-display:swap}
+@font-face{font-family:'Atkinson Hyperlegible Next';src:url('../fonts/atkinson-next-var.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Atkinson Hyperlegible Next';src:url('../fonts/atkinson-next-italic-var.woff2') format('woff2');font-weight:400 700;font-style:italic;font-display:swap}
+
+/* ------------------------------------------------------------ base da página */
+.pg-semana{
+  --sbn-largura:1200px;
+  --sbn-gutter:clamp(16px,4vw,40px);
+  --sbn-secao:clamp(72px,10vw,128px);
+  --botao:var(--cor-salvia-funda);
+  --botao-hover:#275D51;
+  --linha:rgba(16,58,64,.14);
+  --suave:#5B5650; /* grafite claro: 6,3:1 sobre Algodão */
+  margin:0;background:var(--fundo);color:var(--texto);
+  font-family:var(--fonte-texto);font-size:var(--texto-corpo);line-height:var(--entrelinha-corpo);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+}
+.pg-semana *,.pg-semana *::before,.pg-semana *::after{box-sizing:border-box}
+:where(.pg-semana) :where(img,svg,picture){max-width:100%;display:block}
+:where(.pg-semana) :where(img){height:auto}
+:where(.pg-semana) :where(h1,h2,h3,h4,p,ul,ol,figure,blockquote,table){margin:0}
+:where(.pg-semana) :where(ul,ol){padding:0;list-style:none}
+.pg-semana h1,.pg-semana h2,.pg-semana .sbn-h3{
+  font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-variation-settings:'opsz' var(--opsz-titulo);
+  color:var(--titulo);letter-spacing:-.012em;text-wrap:balance;
+}
+.pg-semana h1{font-size:var(--texto-h1);line-height:1.08}
+.pg-semana h2{font-size:var(--texto-h2);line-height:1.14}
+.pg-semana .sbn-h3{font-size:var(--texto-h3);line-height:1.22;font-weight:560}
+.pg-semana p{text-wrap:pretty}
+.pg-semana a{color:var(--cor-salvia-funda);text-underline-offset:.18em;text-decoration-thickness:1px}
+.pg-semana a:hover{text-decoration-thickness:2px}
+.pg-semana :focus-visible{outline:3px solid var(--cor-caramelo-tostado);outline-offset:3px;border-radius:6px}
+.pg-semana strong{font-weight:650}
+.sbn-pular{position:absolute;left:12px;top:-60px;z-index:100;background:var(--cor-mar);color:var(--cor-algodao)!important;padding:10px 16px;border-radius:var(--raio-p);text-decoration:none;font-weight:600}
+.sbn-pular:focus{top:12px}
+.sbn-vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.sbn-wrap{width:100%;max-width:calc(var(--sbn-largura) + 2*var(--sbn-gutter));margin-inline:auto;padding-inline:var(--sbn-gutter)}
+.sbn-estreito{max-width:calc(760px + 2*var(--sbn-gutter))}
+.sbn-secao{padding-block:var(--sbn-secao)}
+.sbn-lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--texto)}
+.sbn-corpo > * + *{margin-top:1.05em}
+.sbn-icone{width:24px;height:24px;flex:none}
+
+/* ------------------------------------------------------------ pendentes (CONFIG) */
+
+/* ------------------------------------------------------------ faixa de prévia */
+.sbn-previa{
+  background:var(--cor-mar);color:var(--cor-algodao);font-size:14px;line-height:1.4;text-align:center;
+  padding:7px var(--sbn-gutter);letter-spacing:.02em;
+}
+.sbn-previa span{display:inline-flex;align-items:center;gap:8px}
+.sbn-previa span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cor-caramelo)}
+.sbn-previa[hidden]{display:none}
+
+/* ------------------------------------------------------------ cabeçalho enxuto */
+.sbn-topo{border-bottom:1px solid var(--linha);background:var(--fundo)}
+.sbn-topo .sbn-wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px}
+.sbn-logo{display:block;flex:none;border-radius:6px}
+.sbn-logo img{width:176px;height:auto}
+.sbn-topo nav ul{display:flex;gap:28px}
+.sbn-topo nav a{color:var(--cor-mar);text-decoration:none;font-weight:550;font-size:16px;padding:8px 2px}
+.sbn-topo nav a:hover{text-decoration:underline}
+@media (max-width:719px){.sbn-topo nav{display:none}.sbn-topo .sbn-wrap{min-height:60px}.sbn-logo img{width:164px}}
+
+/* ------------------------------------------------------------ botão principal (único) */
+.sbn-botao{
+  display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  min-height:56px;padding:15px 28px;border-radius:var(--raio-pilula);border:0;
+  background:var(--botao);color:var(--cor-algodao)!important;text-decoration:none!important;
+  font:600 var(--texto-botao)/1.2 var(--fonte-texto);letter-spacing:.01em;text-align:center;
+  box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 8px 22px -10px rgba(16,58,64,.55);
+  transition:background var(--t-rapido) var(--mare),transform var(--t-rapido) var(--mare),box-shadow var(--t-base) var(--mare);
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.sbn-botao:hover{background:var(--botao-hover);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 14px 28px -12px rgba(16,58,64,.6)}
+.sbn-botao:active{transform:translateY(0)}
+.sbn-botao .sbn-seta{width:34px;height:auto;aspect-ratio:57.3/18.7;flex:none;color:currentColor;transition:transform var(--t-base) var(--mare)}
+.sbn-botao .sbn-seta .ponto-svg{fill:var(--cor-caramelo)!important}
+.sbn-botao:hover .sbn-seta{transform:translateX(4px)}
+.sbn-micro{
+  display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;
+  font-size:15px;line-height:1.45;color:var(--suave);
+}
+.sbn-micro li{display:block;flex:none;white-space:nowrap}
+.sbn-micro li + li::before{content:"";display:inline-block;vertical-align:middle;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.45;margin:0 10px 2px 0}
+.sbn-micro .sbn-icone{width:16px;height:16px;opacity:.8}
+@media (max-width:479px){
+  .sbn-botao{width:100%;padding-inline:20px}
+}
+
+/* ------------------------------------------------------------ 1. topo */
+.sbn-hero{padding-block:clamp(24px,4.5vw,64px) clamp(56px,8vw,104px);position:relative}
+.sbn-hero .sbn-wrap{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(32px,6vw,88px);align-items:center}
+.sbn-hero-texto{max-width:680px}
+.sbn-hero .sbn-submarca{width:clamp(210px,24vw,260px);margin-bottom:clamp(20px,3vw,32px)}
+.sbn-hero h1{font-size:clamp(36px,4.6vw,60px);line-height:1.05}
+.sbn-hero h1 em{font-style:italic;color:var(--cor-salvia-funda);font-weight:540}
+.sbn-hero .sbn-lead{margin-top:clamp(18px,2.4vw,26px);max-width:34em}
+.sbn-hero .sbn-acao{margin-top:clamp(24px,3vw,36px)}
+.sbn-hero-foto{position:relative;justify-self:end;width:100%;max-width:500px}
+.sbn-arco{position:relative;aspect-ratio:4/5;border-radius:999px 999px 0 0;background:var(--cor-salvia);padding:16px 16px 0}
+.sbn-arco picture,.sbn-arco img{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 0 0}
+.sbn-arco img{object-position:50% 30%}
+.sbn-selo-flutua{
+  position:absolute;left:-28px;bottom:36px;max-width:250px;
+  background:var(--cor-algodao);border-radius:var(--raio-m);padding:14px 16px 14px 14px;
+  box-shadow:var(--sombra-cartao);display:flex;gap:12px;align-items:center;
+}
+.sbn-selo-flutua .sbn-mini-icone{width:44px;height:44px;border-radius:12px;background:var(--cor-bruma);display:grid;place-items:center;flex:none;color:var(--cor-mar)}
+.sbn-selo-flutua .sbn-mini-icone svg{width:26px;height:26px}
+.sbn-selo-flutua p{font-size:15px;line-height:1.35;color:var(--cor-mar)}
+.sbn-selo-flutua strong{display:block;font-family:var(--fonte-titulo);font-weight:580;font-size:17px}
+@media (max-width:879px){
+  .sbn-hero .sbn-wrap{grid-template-columns:1fr;gap:40px}
+  .sbn-hero-foto{justify-self:center;max-width:420px}
+  .sbn-selo-flutua{left:-8px;bottom:24px}
+}
+@media (max-width:479px){
+  .sbn-hero{padding-top:22px}
+  .sbn-hero .sbn-submarca{width:188px;margin-bottom:18px}
+  .sbn-hero h1{font-size:clamp(31px,8.6vw,36px);line-height:1.08}
+  .sbn-hero .sbn-lead{font-size:17px;line-height:1.55;margin-top:14px}
+  .sbn-hero .sbn-acao{margin-top:20px}
+  .sbn-hero-foto{max-width:none;width:calc(100% - 24px);margin-inline:auto}
+  .sbn-arco{aspect-ratio:5/6;padding:12px 12px 0}
+  .sbn-selo-flutua{left:-12px;bottom:18px;max-width:228px;padding:12px}
+}
+
+/* ------------------------------------------------------------ 2. a cena */
+.sbn-cena{background:var(--cor-pedra)}
+.sbn-cena .sbn-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,104px);align-items:start}
+.sbn-cena h2{max-width:13em}
+.sbn-cena .sbn-corpo{margin-top:var(--esp-5);max-width:34em}
+.sbn-virada-frase{
+  font-family:var(--fonte-titulo);font-weight:560;font-size:clamp(22px,2.2vw,26px);line-height:1.3;color:var(--cor-mar);
+  padding-top:var(--esp-2);
+}
+.sbn-dores{display:grid;gap:14px;align-self:center}
+.sbn-dor{
+  display:grid;grid-template-columns:48px 1fr;gap:4px 18px;align-items:start;
+  background:var(--cor-algodao);border-radius:var(--raio-m);padding:20px 22px;
+  box-shadow:var(--sombra-suave);
+}
+.sbn-dor .sbn-dor-icone{grid-row:span 2;width:48px;height:48px;border-radius:50%;background:var(--cor-bruma);display:grid;place-items:center;color:var(--cor-mar)}
+.sbn-dor .sbn-dor-icone svg{width:23px;height:23px}
+.sbn-dor h3{font-family:var(--fonte-titulo);font-size:21px;font-weight:580;line-height:1.25;color:var(--cor-mar)}
+.sbn-dor p{font-size:17px;line-height:1.55}
+@media (max-width:879px){.sbn-cena .sbn-wrap{grid-template-columns:1fr}}
+@media (max-width:479px){.sbn-dor{grid-template-columns:40px 1fr;gap:4px 14px;padding:18px 16px}.sbn-dor .sbn-dor-icone{width:40px;height:40px}.sbn-dor .sbn-dor-icone svg{width:20px;height:20px}.sbn-dor h3{font-size:19px}}
+
+/* ------------------------------------------------------------ 3. a virada */
+.sbn-virada{text-align:left}
+.sbn-virada h2{max-width:15em}
+.sbn-virada .sbn-corpo{margin-top:var(--esp-5)}
+.sbn-citacao{margin-top:clamp(48px,6vw,72px);padding-top:clamp(36px,4vw,48px);position:relative}
+.sbn-citacao .sbn-traco{position:absolute;top:0;left:0;width:min(420px,100%);height:auto;color:var(--cor-salvia-funda)}
+.sbn-citacao blockquote p{
+  font-family:var(--fonte-titulo);font-style:italic;font-weight:500;font-variation-settings:'opsz' 72;
+  font-size:clamp(30px,4.4vw,52px);line-height:1.14;color:var(--cor-salvia-funda);letter-spacing:-.015em;text-wrap:balance;
+}
+.sbn-citacao figcaption{margin-top:var(--esp-5);font-size:16px;font-weight:650;letter-spacing:.06em;color:var(--cor-mar)}
+
+/* ------------------------------------------------------------ 4. o kit */
+.sbn-kit{background:var(--cor-bruma);overflow:clip}
+.sbn-kit-cabeca{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,72px);align-items:end}
+.sbn-kit-cabeca h2{max-width:14em}
+.sbn-kit-cabeca .sbn-lead{max-width:30em}
+@media (max-width:879px){.sbn-kit-cabeca{grid-template-columns:1fr}}
+
+/* palco dos mockups */
+.sbn-mesa{
+  position:relative;margin-top:clamp(40px,6vw,72px);
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto;gap:24px;
+  align-items:start;
+}
+.sbn-mesa > *{min-width:0}
+.mk-celular{grid-column:1 / span 3;grid-row:1 / span 2;align-self:center}
+.mk-folha{grid-column:4 / span 5;grid-row:1}
+.mk-folha .mk-papel{transform:rotate(-1.2deg)}
+.mk-lista{grid-column:9 / span 4;grid-row:1 / span 2;align-self:center}
+.mk-lista .mk-papel{transform:rotate(1.4deg)}
+.mk-levo{grid-column:4 / span 5;grid-row:2}
+@media (max-width:1079px){
+  .mk-celular{grid-column:1 / span 5;grid-row:1}
+  .mk-lista{grid-column:6 / span 7;grid-row:1;align-self:center}
+  .mk-folha{grid-row:2}
+  .mk-folha{grid-column:1 / span 12;grid-row:2}
+  .mk-levo{grid-column:1 / span 12;grid-row:3}
+}
+@media (max-width:599px){
+  .sbn-mesa{gap:16px}
+  .mk-celular{grid-column:1 / span 6}
+  .mk-lista{grid-column:7 / span 6;align-self:start}
+  .mk-lista .mk-papel{transform:rotate(1deg)}
+  .mk-folha .mk-papel{transform:none}
+}
+.mk-legenda{margin-top:10px;font-size:14px;line-height:1.35;color:var(--cor-mar-medio);text-align:center}
+
+/* celular: planejador */
+.mk-celular .mk-aparelho{
+  width:100%;max-width:272px;margin-inline:auto;
+  background:var(--cor-mar);border-radius:34px;padding:9px;box-shadow:var(--sombra-cartao);
+}
+.mk-tela{min-height:100%;background:var(--cor-algodao);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;font-size:11px;line-height:1.3;color:var(--cor-grafite)}
+.mk-tela-topo{background:var(--cor-salvia);color:var(--cor-mar);padding:22px 14px 12px;position:relative}
+.mk-tela-topo::before{content:"";position:absolute;top:8px;left:50%;width:56px;height:5px;border-radius:9px;background:rgba(16,58,64,.35);transform:translateX(-50%)}
+.mk-tela-topo small{display:block;font-size:9px;letter-spacing:.14em;font-weight:700;text-transform:uppercase;opacity:.85}
+.mk-tela-topo b{display:block;font-family:var(--fonte-titulo);font-weight:580;font-size:17px;line-height:1.15;margin-top:2px}
+.mk-dias{display:flex;justify-content:space-between;gap:3px;margin-top:10px}
+.mk-dias span{flex:1;text-align:center;font-weight:700;font-size:10px;padding:5px 0;border-radius:8px;background:rgba(242,240,235,.55)}
+.mk-dias span.on{background:var(--cor-mar);color:var(--cor-algodao)}
+.mk-refeicoes{padding:10px 12px 14px;display:grid;gap:7px;align-content:start;flex:1}
+.mk-progresso{margin:0 12px 14px;font-size:9.5px;font-weight:700;letter-spacing:.06em;color:var(--cor-mar-medio)}
+.mk-progresso span{display:block;height:5px;border-radius:9px;background:var(--cor-pedra);margin-top:5px;overflow:hidden}
+.mk-progresso span::after{content:"";display:block;width:43%;height:100%;background:var(--cor-salvia-funda);border-radius:9px}
+.mk-ref{background:#fff;border-radius:10px;padding:7px 9px;border:1px solid rgba(16,58,64,.08)}
+.mk-ref i{display:block;font-style:normal;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--cor-salvia-funda)}
+.mk-ref p{font-size:11px;line-height:1.3;margin-top:1px}
+.mk-ref.marmita{background:var(--cor-pedra);border-style:dashed;border-color:rgba(138,90,46,.45)}
+.mk-ref.marmita i{color:var(--cor-caramelo-tostado)}
+
+/* folha impressa: cardápio-exemplo */
+.mk-papel{background:#FBFAF7;border-radius:6px;box-shadow:var(--sombra-cartao);padding:clamp(18px,2.4vw,28px);color:var(--cor-grafite)}
+.mk-folha-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.mk-folha-cab img{width:clamp(120px,14vw,160px);height:auto}
+.mk-chip{flex:none;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--cor-pedra);color:var(--cor-caramelo-tostado);border-radius:99px;padding:4px 9px;line-height:1.3}
+.mk-folha h3{font-family:var(--fonte-titulo);font-weight:580;color:var(--cor-mar);font-size:clamp(19px,2vw,23px);line-height:1.15;margin-top:14px}
+.mk-folha .mk-sub{font-size:11px;color:var(--suave);margin-top:2px}
+.mk-rota{width:100%;height:auto;color:var(--cor-mar);margin:12px 0 4px}
+.mk-tabela{width:100%;border-collapse:collapse;font-size:11px;line-height:1.35;table-layout:fixed}
+.mk-tabela th{text-align:left;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--cor-salvia-funda);padding:7px 6px 7px 0;font-weight:700;vertical-align:top;width:27%}
+.mk-tabela th::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--cor-caramelo);margin-right:6px;vertical-align:1px}
+.mk-tabela td{padding:7px 0;border-top:1px solid rgba(16,58,64,.1);vertical-align:top}
+.mk-tabela tr:first-child td,.mk-tabela tr:first-child th{border-top:0}
+.mk-tabela tr + tr th{border-top:1px solid rgba(16,58,64,.1)}
+.mk-recado{margin-top:12px;background:var(--cor-bruma);border-radius:8px;padding:9px 11px;font-size:10.5px;line-height:1.4;color:var(--cor-mar)}
+.mk-rodape{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:9px;color:var(--suave)}
+.mk-rodape svg{width:24px;height:auto;color:var(--cor-mar)}
+
+/* lista de compras */
+.mk-lista .mk-papel{padding:18px 16px 20px;background:#fff;position:relative}
+.mk-lista .mk-papel::before{content:"";position:absolute;top:-7px;left:50%;width:64px;height:16px;transform:translateX(-50%) rotate(-2deg);background:rgba(169,211,198,.75);border-radius:2px}
+.mk-lista h3{font-family:var(--fonte-titulo);font-weight:580;font-size:18px;color:var(--cor-mar);line-height:1.15}
+.mk-lista .mk-sub{font-size:10.5px;color:var(--suave);margin-top:2px}
+.mk-secao-mercado{margin-top:11px}
+.mk-secao-mercado i{display:block;font-style:normal;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cor-salvia-funda);margin-bottom:4px}
+.mk-secao-mercado li{display:flex;gap:7px;align-items:center;font-size:11.5px;line-height:1.3;padding:2px 0}
+.mk-secao-mercado li::before{content:"";width:11px;height:11px;border:1.4px solid rgba(16,58,64,.45);border-radius:3px;flex:none}
+.mk-secao-mercado li.ok{color:var(--suave);text-decoration:line-through;text-decoration-color:rgba(16,58,64,.4)}
+.mk-secao-mercado li.ok::before{background:var(--cor-salvia-funda) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F2F0EB' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/9px no-repeat;border-color:var(--cor-salvia-funda)}
+
+/* Levo ou Deixo */
+.mk-levo .mk-cartoes{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--raio-m);overflow:hidden;box-shadow:var(--sombra-cartao);min-height:168px}
+.mk-levo .mk-lado{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px}
+.mk-levo .mk-lado small{font-size:10px;letter-spacing:.16em;font-weight:700;text-transform:uppercase}
+.mk-levo .mk-lado b{font-family:var(--fonte-titulo);font-weight:580;font-size:clamp(18px,1.8vw,22px);line-height:1.15}
+.mk-levo .mk-lado.levo{background:var(--cor-salvia);color:var(--cor-mar)}
+.mk-levo .mk-lado.deixo{background:var(--cor-mar);color:var(--cor-algodao)}
+.mk-levo .mk-lado.deixo small{color:var(--cor-salvia-clara)}
+.mk-levo .mk-lado span{font-size:11.5px;line-height:1.4;margin-top:auto;opacity:.92}
+@media (max-width:599px){.mk-levo .mk-cartoes{min-height:0}.mk-levo .mk-lado{padding:16px 14px}.mk-levo .mk-lado span{margin-top:10px}}
+
+@media (max-width:599px){
+  .mk-celular .mk-aparelho{border-radius:26px;padding:7px}
+  .mk-tela{border-radius:20px;font-size:10px}
+  .mk-tela-topo{padding:18px 10px 10px}
+  .mk-tela-topo b{font-size:14px}
+  .mk-dias span{font-size:8.5px;padding:4px 0;border-radius:6px}
+  .mk-refeicoes{padding:8px;gap:5px}
+  .mk-ref{padding:5px 7px;border-radius:8px}
+  .mk-ref i{font-size:7.5px}
+  .mk-ref p{font-size:9.5px}
+  .mk-ref.esconde-pequeno{display:none}
+  .mk-lista .mk-papel{padding:14px 11px 14px}
+  .mk-lista h3{font-size:15px}
+  .mk-secao-mercado{margin-top:8px}
+  .mk-secao-mercado li{font-size:10.5px}
+  .mk-secao-mercado.esconde-pequeno{display:none}
+}
+
+/* itens do kit */
+.sbn-itens{margin-top:clamp(56px,7vw,96px);counter-reset:item;border-top:1px solid rgba(16,58,64,.18)}
+.sbn-item{
+  display:grid;grid-template-columns:72px minmax(0,1.25fr) minmax(0,.9fr);gap:12px clamp(20px,3.5vw,48px);
+  padding-block:clamp(26px,3vw,36px);border-bottom:1px solid rgba(16,58,64,.18);align-items:start;
+}
+.sbn-item-num{font-family:var(--fonte-titulo);font-weight:500;font-size:44px;line-height:.9;color:var(--cor-salvia-funda);font-variant-numeric:lining-nums;font-variation-settings:'opsz' 72}
+.sbn-item h3{font-family:var(--fonte-titulo);font-weight:580;font-size:clamp(21px,2vw,25px);line-height:1.2;color:var(--cor-mar)}
+.sbn-item .sbn-meta{display:block;margin-top:4px;font-size:15px;font-weight:600;color:var(--cor-mar-medio);letter-spacing:.01em}
+.sbn-item .sbn-desc{margin-top:10px;font-size:17px;line-height:1.6;max-width:36em}
+.sbn-poupa{background:rgba(242,240,235,.72);border-radius:0 var(--raio-m) var(--raio-m) 0;padding:16px 18px;font-size:16.5px;line-height:1.55;color:var(--cor-grafite);border-left:3px solid var(--cor-salvia)}
+.sbn-poupa b{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cor-salvia-funda);margin-bottom:4px}
+@media (max-width:879px){
+  .sbn-item{grid-template-columns:52px minmax(0,1fr)}
+  .sbn-item-num{font-size:36px}
+  .sbn-poupa{grid-column:2}
+}
+@media (max-width:479px){
+  .sbn-item{grid-template-columns:34px minmax(0,1fr);gap:10px 12px}
+  .sbn-item-num{font-size:24px;padding-top:4px}
+  .sbn-poupa{grid-column:1 / -1;margin-top:4px;font-size:16px;padding:14px 16px}
+  .sbn-item .sbn-desc{font-size:17px}
+}
+.sbn-fecho-preco{
+  margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;
+  background:var(--cor-algodao);border-radius:var(--raio-g);padding:clamp(24px,3.5vw,40px);box-shadow:var(--sombra-suave);
+}
+.sbn-fecho-preco p.sbn-preco-txt{font-family:var(--fonte-titulo);font-weight:560;font-size:clamp(22px,2.4vw,28px);line-height:1.3;color:var(--cor-mar);max-width:20em}
+.sbn-fecho-preco .sbn-micro{margin-top:12px}
+.sbn-fecho-preco .sbn-acao{flex:none}
+@media (max-width:479px){.sbn-fecho-preco .sbn-acao{width:100%}}
+
+/* ------------------------------------------------------------ 5. linha do tempo */
+.sbn-semana .sbn-cab{max-width:640px}
+.sbn-linha-tempo{position:relative;margin-top:clamp(44px,6vw,72px)}
+.sbn-dias{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px}
+.sbn-linha-tempo::before{ /* trilho */
+  content:"";position:absolute;left:0;right:22px;top:23px;height:2px;background:rgba(16,58,64,.12);border-radius:2px;
+}
+.sbn-trilho{position:absolute;left:0;right:22px;top:23px;height:2px;background:var(--cor-mar);border-radius:2px;transform-origin:left center;transform:scaleX(1)}
+.sbn-trilho::after{content:"";position:absolute;right:-14px;top:50%;width:12px;height:12px;border-radius:50%;background:var(--cor-caramelo);transform:translateY(-50%)}
+.sbn-dia{position:relative}
+.sbn-dia-ponto{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;background:var(--fundo);border:2px solid var(--cor-mar);display:grid;place-items:center;color:var(--cor-mar)}
+.sbn-dia-ponto svg{width:22px;height:22px}
+.sbn-dia h3{margin-top:18px;font-family:var(--fonte-titulo);font-weight:580;font-size:21px;line-height:1.2;color:var(--cor-mar)}
+.sbn-dia h3 small{display:block;font-family:var(--fonte-texto);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cor-salvia-funda);margin-bottom:4px}
+.sbn-dia p{margin-top:8px;font-size:16.5px;line-height:1.55}
+.sbn-semana-fecho{margin-top:clamp(40px,5vw,64px);font-family:var(--fonte-titulo);font-weight:560;font-size:clamp(22px,2.4vw,28px);line-height:1.35;color:var(--cor-mar);max-width:28em}
+@media (max-width:959px){
+  .sbn-dias{grid-template-columns:1fr;gap:28px}
+  .sbn-linha-tempo::before,.sbn-trilho{left:23px;right:auto;top:0;bottom:30px;width:2px;height:auto}
+  .sbn-trilho{transform-origin:center top}
+  .sbn-trilho::after{right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .sbn-dia{display:grid;grid-template-columns:48px 1fr;gap:0 20px}
+  .sbn-dia-ponto{grid-row:span 2}
+  .sbn-dia h3{margin-top:2px}
+  .sbn-dia p{margin-top:6px}
+}
+/* animação do traço (só quando JS marcou .anima e o usuário não pediu menos movimento) */
+@media (prefers-reduced-motion:no-preference){
+  .js .anima .sbn-trilho{transform:scaleX(0);transition:transform var(--t-traco) var(--mare)}
+  .js .anima .sbn-trilho::after{opacity:0;transition:opacity .3s var(--mare) var(--t-traco)}
+  .js .anima .sbn-dia-ponto{transition:background .4s var(--mare),color .4s var(--mare)}
+  .js .anima .sbn-dia{opacity:.35;transition:opacity .5s var(--mare)}
+  .js .anima.visto .sbn-trilho{transform:none}
+  .js .anima.visto .sbn-trilho::after{opacity:1}
+  .js .anima.visto .sbn-dia{opacity:1}
+  .js .anima.visto .sbn-dia:nth-child(2){transition-delay:.15s}
+  .js .anima.visto .sbn-dia:nth-child(3){transition-delay:.4s}
+  .js .anima.visto .sbn-dia:nth-child(4){transition-delay:.65s}
+  .js .anima.visto .sbn-dia:nth-child(5){transition-delay:.9s}
+  @media (max-width:959px){.js .anima .sbn-trilho{transform:scaleY(0)}}
+  /* traço do divisor (revela da esquerda para a direita) e do selo (desenha o círculo); o ponto pousa por último */
+  .js .anima-traco .sbn-traco{clip-path:inset(-20% 100% -20% 0);transition:clip-path var(--t-traco) var(--mare)}
+  .js .anima-traco.visto .sbn-traco{clip-path:inset(-20% -2% -20% 0)}
+  .js .anima-traco .sbn-traco-path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset var(--t-traco) var(--mare)}
+  .js .anima-traco.visto .sbn-traco-path{stroke-dashoffset:0}
+  .js .anima-traco .sbn-traco-ponto{opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:center;transition:opacity .35s var(--mare) calc(var(--t-traco) - 120ms),transform .5s var(--mare) calc(var(--t-traco) - 120ms)}
+  .js .anima-traco.visto .sbn-traco-ponto{opacity:1;transform:none}
+  /* entrada suave de blocos */
+  .js .sbn-revela{opacity:0;transform:translateY(14px);transition:opacity var(--t-entrada) var(--mare),transform var(--t-entrada) var(--mare)}
+  .js .sbn-revela.visto{opacity:1;transform:none}
+}
+
+/* ------------------------------------------------------------ 6. acesso */
+.sbn-acesso{background:var(--cor-pedra)}
+.sbn-passos{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:passo}
+.sbn-passo{background:var(--cor-algodao);border-radius:var(--raio-m);padding:26px 24px 28px;position:relative;box-shadow:var(--sombra-suave)}
+.sbn-passo-num{width:40px;height:40px;border-radius:50%;background:var(--cor-mar);color:var(--cor-algodao);display:grid;place-items:center;font-family:var(--fonte-titulo);font-weight:600;font-size:20px;line-height:1}
+.sbn-passo h3{margin-top:16px;font-family:var(--fonte-titulo);font-weight:580;font-size:21px;line-height:1.25;color:var(--cor-mar)}
+.sbn-passo p{margin-top:8px;font-size:17px;line-height:1.55}
+.sbn-acesso .sbn-corpo{margin-top:clamp(28px,3.5vw,40px);max-width:44em}
+.sbn-acesso .sbn-ajuda{margin-top:14px;font-size:16px;color:var(--suave)}
+@media (max-width:879px){.sbn-passos{grid-template-columns:1fr}.sbn-passo{display:grid;grid-template-columns:40px 1fr;gap:0 18px;padding:22px 20px}.sbn-passo-num{grid-row:span 2}.sbn-passo h3{margin-top:4px}}
+
+/* ------------------------------------------------------------ 7. para quem */
+.sbn-quem .sbn-wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
+.sbn-quem-col{border-radius:var(--raio-g);padding:clamp(26px,3.5vw,44px)}
+.sbn-quem-sim{background:var(--cor-bruma)}
+.sbn-quem-nao{background:transparent;border:1px solid rgba(16,58,64,.2)}
+.sbn-quem h2{font-size:clamp(27px,3vw,34px)}
+.sbn-lista-marca{margin-top:var(--esp-5);display:grid;gap:14px}
+.sbn-lista-marca li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;font-size:17.5px;line-height:1.55}
+.sbn-lista-marca .sbn-marca{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;margin-top:-1px}
+.sbn-lista-marca .sbn-marca svg{width:16px;height:16px}
+.sbn-quem-sim .sbn-marca{background:var(--cor-salvia-funda);color:var(--cor-algodao)}
+.sbn-quem-nao .sbn-marca{background:var(--cor-pedra);color:var(--cor-mar)}
+@media (max-width:879px){.sbn-quem .sbn-wrap{grid-template-columns:1fr}}
+@media (max-width:479px){.sbn-quem-col{padding:24px 18px}.sbn-lista-marca li{font-size:17px}}
+
+/* ------------------------------------------------------------ 8. garantia */
+.sbn-garantia .sbn-wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.sbn-selo{width:clamp(180px,22vw,248px);aspect-ratio:1;position:relative;color:var(--cor-mar)}
+.sbn-selo svg{width:100%;height:100%}
+.sbn-selo-txt{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.sbn-selo-txt b{font-family:var(--fonte-titulo);font-weight:560;font-size:clamp(56px,7vw,76px);line-height:.9;color:var(--cor-mar);font-variation-settings:'opsz' 72}
+.sbn-selo-txt span{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cor-salvia-funda);margin-top:8px}
+.sbn-garantia .sbn-corpo{margin-top:var(--esp-5);max-width:36em}
+.sbn-nota{margin-top:var(--esp-5);font-size:16px;line-height:1.6;color:var(--suave);max-width:40em;padding-left:16px;border-left:2px solid rgba(16,58,64,.18)}
+.sbn-garantia .sbn-ajuda{margin-top:14px;font-size:16px;color:var(--suave)}
+@media (max-width:719px){.sbn-garantia .sbn-wrap{grid-template-columns:1fr;gap:28px}.sbn-selo{width:148px}}
+
+/* ------------------------------------------------------------ 10. sobre a Ana */
+.sbn-sobre{background:var(--cor-pedra)}
+.sbn-sobre .sbn-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,6vw,96px);align-items:center}
+.sbn-sobre-foto{max-width:420px;width:100%}
+.sbn-sobre .sbn-arco{aspect-ratio:5/6}
+.sbn-sobre .sbn-arco picture{overflow:hidden;border-radius:999px 999px 0 0}
+.sbn-sobre .sbn-arco img{object-position:50% 30%}
+.sbn-sobre h2{font-size:clamp(28px,3.2vw,36px);max-width:17em}
+.sbn-sobre .sbn-corpo{margin-top:var(--esp-5);max-width:36em}
+.sbn-assinatura{margin-top:var(--esp-6);display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;color:var(--cor-mar)}
+.sbn-assinatura svg{width:52px;height:auto;flex:none;color:var(--cor-mar)}
+@media (max-width:879px){.sbn-sobre .sbn-wrap{grid-template-columns:1fr}.sbn-sobre-foto{max-width:360px}}
+@media (max-width:479px){.sbn-sobre-foto{max-width:none;width:calc(100% - 24px);margin-inline:auto}.sbn-sobre .sbn-arco{aspect-ratio:1/1}.sbn-sobre .sbn-arco img{object-position:50% 30%}}
+.pg-semana [data-crn]{white-space:nowrap}
+
+/* ------------------------------------------------------------ 11. perguntas */
+.sbn-faq .sbn-wrap{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(32px,5vw,80px);align-items:start}
+.sbn-faq-cab{position:sticky;top:32px}
+@media (max-width:879px){.sbn-faq .sbn-wrap{grid-template-columns:1fr}.sbn-faq-cab{position:static}}
+
+/* ------------------------------------------------------------ 12. chamada final */
+.sbn-final{background:var(--cor-mar);color:var(--cor-algodao);position:relative;overflow:clip}
+.sbn-final .sbn-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,6vw,96px);align-items:center}
+.sbn-final .sbn-submarca{width:clamp(220px,26vw,300px);margin-bottom:var(--esp-6)}
+.sbn-final h2{color:var(--cor-algodao);font-size:clamp(32px,4.2vw,48px)}
+.sbn-final .sbn-lead{color:var(--cor-algodao);margin-top:var(--esp-5);max-width:30em;opacity:.95}
+.sbn-final-caixa{background:var(--cor-mar-superficie);border:1px solid rgba(169,211,198,.22);border-radius:var(--raio-g);padding:clamp(24px,3.5vw,40px)}
+.sbn-final-caixa > ul{display:grid;gap:10px}
+.sbn-final-caixa > ul > li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:17px;line-height:1.45}
+.sbn-final-caixa > ul > li svg{width:20px;height:20px;color:var(--cor-salvia-clara);margin-top:2px}
+.sbn-preco{margin-top:var(--esp-6);padding-top:var(--esp-5);border-top:1px solid rgba(169,211,198,.22);display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.sbn-preco b{font-family:var(--fonte-titulo);font-weight:560;font-size:clamp(40px,4.6vw,52px);line-height:1;color:var(--cor-algodao);font-variation-settings:'opsz' 72}
+.sbn-preco span{font-size:16px;color:var(--cor-salvia-clara)}
+.sbn-final .sbn-acao{margin-top:var(--esp-5)}
+.sbn-final .sbn-botao{width:100%;box-shadow:0 0 0 1px rgba(169,211,198,.35),0 12px 26px -12px rgba(0,0,0,.6)}
+.sbn-final .sbn-micro{color:var(--cor-salvia-clara);justify-content:center}
+@media (max-width:879px){.sbn-final .sbn-wrap{grid-template-columns:1fr}}
+@media (max-width:479px){.sbn-final-caixa{padding:22px 18px}.sbn-final-caixa .sbn-seta{display:none}}
+@media (max-width:359px){.sbn-botao .sbn-seta{display:none}.sbn-botao{padding-inline:16px}}
+
+/* ------------------------------------------------------------ 13. depois da Semana */
+.sbn-depois .sbn-cab{max-width:680px}
+.sbn-depois-cartoes{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sbn-depois-cartao{border:1px solid var(--linha);border-radius:var(--raio-g);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.35)}
+.sbn-depois-cartao .sbn-dc-icone{width:52px;height:52px;border-radius:50%;background:var(--cor-bruma);display:grid;place-items:center;color:var(--cor-mar);margin-bottom:6px}
+.sbn-depois-cartao .sbn-dc-icone svg{width:30px;height:30px}
+.sbn-depois-cartao small{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cor-salvia-funda)}
+.sbn-depois-cartao h3{font-family:var(--fonte-titulo);font-weight:580;font-size:clamp(22px,2.2vw,26px);line-height:1.2;color:var(--cor-mar)}
+.sbn-depois-cartao p{font-size:17px;line-height:1.6}
+.sbn-depois-cartao .sbn-apoio{font-size:15.5px;color:var(--suave);line-height:1.55;margin-top:auto;padding-top:14px;border-top:1px solid var(--linha)}
+.sbn-link-texto{display:inline-flex;align-items:center;gap:10px;font-weight:650;font-size:17px;color:var(--cor-caramelo-tostado)!important;text-decoration:underline;text-underline-offset:.22em;margin-top:4px;padding-block:6px;width:fit-content}
+.sbn-link-texto svg{width:30px;height:auto;aspect-ratio:57.3/18.7;flex:none;transition:transform var(--t-base) var(--mare)}
+.sbn-link-texto:hover svg{transform:translateX(4px)}
+.sbn-apoio .sbn-link-texto{font-size:15.5px;margin-top:0;padding-block:2px}
+@media (max-width:879px){.sbn-depois-cartoes{grid-template-columns:1fr}}
+
+/* ------------------------------------------------------------ 14. rodapé */
+.sbn-rodape{background:var(--cor-mar-superficie);color:var(--cor-algodao);padding-block:clamp(48px,6vw,72px) 40px;font-size:16px;line-height:1.6}
+.sbn-rodape a{color:var(--cor-algodao)}
+.sbn-rodape .sbn-wrap{display:grid;gap:32px}
+.sbn-rodape-topo{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);gap:32px}
+.sbn-rodape-topo img{width:220px;height:auto}
+.sbn-rodape h3{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cor-salvia-clara);margin-bottom:10px;font-family:var(--fonte-texto)}
+.sbn-rodape ul{display:grid;gap:6px}
+.sbn-rodape li{display:flex;align-items:center;gap:10px}
+.sbn-rodape li svg{width:18px;height:18px;flex:none;opacity:.85}
+.sbn-rodape .sbn-crn{margin-top:14px;font-weight:600}
+.sbn-aviso{border-top:1px solid rgba(169,211,198,.22);padding-top:24px;font-size:14.5px;line-height:1.6;color:#D3DCDA;max-width:62em}
+@media (max-width:879px){.sbn-rodape-topo{grid-template-columns:1fr 1fr}.sbn-rodape-topo > :first-child{grid-column:1/-1}}
+@media (max-width:479px){.sbn-rodape-topo{grid-template-columns:1fr}}
+
+/* ------------------------------------------------------------ barra fixa no celular */
+.sbn-barra{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(242,240,235,.96);backdrop-filter:saturate(1.2) blur(8px);-webkit-backdrop-filter:saturate(1.2) blur(8px);
+  border-top:1px solid var(--linha);box-shadow:0 -8px 24px -12px rgba(16,58,64,.25);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(110%);visibility:hidden;transition:transform var(--t-base) var(--mare),visibility 0s linear var(--t-base);
+}
+.sbn-barra.on{transform:none;visibility:visible;transition:transform var(--t-base) var(--mare),visibility 0s}
+.sbn-barra p{font-size:14px;line-height:1.25;font-weight:650;color:var(--cor-mar)}
+.sbn-barra p span{display:block;font-weight:400;color:var(--suave)}
+.sbn-barra .sbn-botao{min-height:48px;padding:12px 18px;font-size:16px;width:auto;flex:none}
+.sbn-barra .sbn-botao .sbn-seta{display:none}
+@media (max-width:419px){.sbn-barra p{display:none}.sbn-barra .sbn-botao{width:100%}}
+@media (min-width:880px){.sbn-barra{display:none}}
+
+/* aviso de prévia (checkout ou link ainda vazio) */
+.sbn-toast{
+  position:fixed;left:50%;bottom:88px;z-index:60;transform:translate(-50%,20px);opacity:0;pointer-events:none;
+  width:min(440px,calc(100% - 32px));background:var(--cor-mar);color:var(--cor-algodao);border-radius:var(--raio-m);
+  padding:14px 18px;font-size:15.5px;line-height:1.45;box-shadow:var(--sombra-cartao);transition:opacity var(--t-base) var(--mare),transform var(--t-base) var(--mare);
+}
+.sbn-toast.on{opacity:1;transform:translate(-50%,0)}
+@media (min-width:880px){.sbn-toast{bottom:32px}}
+
+@media (prefers-reduced-motion:reduce){
+  .pg-semana *,.pg-semana *::before,.pg-semana *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+@media print{.sbn-barra,.sbn-previa,.sbn-toast{display:none!important}}
+
+/* integração: corpo mínimo de 18px no desktop */
+@media (min-width:641px){.sbn-dor p,.sbn-item .sbn-desc,.sbn-poupa,.sbn-dia p,.sbn-passo p,.sbn-faq .sbn-resposta,.sbn-final-caixa > ul > li,.sbn-depois-cartao p{font-size:18px}}
+
+/* ---- rodada 3: 320×568 com o botão na primeira tela; botões sem quebra no celular */
+@media (max-width:360px){
+  .sbn-hero{padding-top:14px}
+  .sbn-hero .sbn-submarca{display:none}
+  .sbn-hero .rotulo{margin-bottom:10px}
+  .sbn-hero h1{font-size:29px;line-height:1.08}
+  .sbn-hero .sbn-lead{font-size:17px;margin-top:10px}
+  .sbn-hero .sbn-acao{margin-top:16px}
+}
+@media (max-width:430px){
+  .sbn-final-caixa .sbn-botao,.sbn-hero .sbn-botao{width:100%;white-space:nowrap;font-size:16px;padding-inline:18px;gap:10px}
+  .sbn-final-caixa .sbn-botao .sbn-seta{width:26px}
+}
+.sbn-hero .sbn-arco img{object-position:50% 22%}
+.sbn-hero .sbn-arco img{transform:scale(1.3);transform-origin:50% 36%}

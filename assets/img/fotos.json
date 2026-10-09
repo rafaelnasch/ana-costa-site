@@ -1,0 +1,360 @@
+{
+  "_nota": "Gerado por _dev/fotos.py. Fotos reais da Ana, uso sujeito à autorização dela. Sem filhos nem outras pessoas.",
+  "fotos": {
+    "hero": {
+      "id": "hero",
+      "alt": "Ana Paula Costa sorrindo, sentada num sofá claro com o notebook no colo, de camisa branca, numa sala iluminada com uma planta ao fundo",
+      "uso": "Hero da home e chamadas finais (moldura em arco)",
+      "fase": "todas",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9616.jpg",
+      "proporcao": "4/5",
+      "width": 1255,
+      "height": 1569,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1255
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/hero-800.webp",
+      "srcset_webp": "assets/img/fotos/hero-480.webp 480w, assets/img/fotos/hero-800.webp 800w, assets/img/fotos/hero-1200.webp 1200w, assets/img/fotos/hero-1255.webp 1255w",
+      "srcset_avif": "assets/img/fotos/hero-480.avif 480w, assets/img/fotos/hero-800.avif 800w, assets/img/fotos/hero-1200.avif 1200w, assets/img/fotos/hero-1255.avif 1255w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/hero-480.avif 480w, assets/img/fotos/hero-800.avif 800w, assets/img/fotos/hero-1200.avif 1200w, assets/img/fotos/hero-1255.avif 1255w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/hero-480.webp 480w, assets/img/fotos/hero-800.webp 800w, assets/img/fotos/hero-1200.webp 1200w, assets/img/fotos/hero-1255.webp 1255w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/hero-800.webp\" width=\"1255\" height=\"1569\" alt=\"Ana Paula Costa sorrindo, sentada num sofá claro com o notebook no colo, de camisa branca, numa sala iluminada com uma planta ao fundo\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "hero-mobile": {
+      "id": "hero-mobile",
+      "alt": "Ana Paula Costa sorrindo, sentada num sofá claro com o notebook no colo, de camisa branca",
+      "uso": "Hero no celular (vem depois do botão)",
+      "fase": "todas",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9616.jpg",
+      "proporcao": "1/1",
+      "width": 1147,
+      "height": 1147,
+      "larguras": [
+        480,
+        800,
+        1147
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/hero-mobile-800.webp",
+      "srcset_webp": "assets/img/fotos/hero-mobile-480.webp 480w, assets/img/fotos/hero-mobile-800.webp 800w, assets/img/fotos/hero-mobile-1147.webp 1147w",
+      "srcset_avif": "assets/img/fotos/hero-mobile-480.avif 480w, assets/img/fotos/hero-mobile-800.avif 800w, assets/img/fotos/hero-mobile-1147.avif 1147w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/hero-mobile-480.avif 480w, assets/img/fotos/hero-mobile-800.avif 800w, assets/img/fotos/hero-mobile-1147.avif 1147w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/hero-mobile-480.webp 480w, assets/img/fotos/hero-mobile-800.webp 800w, assets/img/fotos/hero-mobile-1147.webp 1147w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/hero-mobile-800.webp\" width=\"1147\" height=\"1147\" alt=\"Ana Paula Costa sorrindo, sentada num sofá claro com o notebook no colo, de camisa branca\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "retrato-oculos": {
+      "id": "retrato-oculos",
+      "alt": "Ana Paula Costa de óculos, sorrindo com a mão no rosto, diante do notebook no escritório, com um mapa-múndi na parede",
+      "uso": "Hero de Sobre, Atendimentos e Semana Bem Nutrida; retrato sem gestação",
+      "fase": "todas, inclusive 40+",
+      "origem": "fotos/03-retrato-escritorio-notebook-oculos-sorrindo.jpg",
+      "proporcao": "4/5",
+      "width": 1600,
+      "height": 2000,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/retrato-oculos-800.webp",
+      "srcset_webp": "assets/img/fotos/retrato-oculos-480.webp 480w, assets/img/fotos/retrato-oculos-800.webp 800w, assets/img/fotos/retrato-oculos-1200.webp 1200w, assets/img/fotos/retrato-oculos-1600.webp 1600w",
+      "srcset_avif": "assets/img/fotos/retrato-oculos-480.avif 480w, assets/img/fotos/retrato-oculos-800.avif 800w, assets/img/fotos/retrato-oculos-1200.avif 1200w, assets/img/fotos/retrato-oculos-1600.avif 1600w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/retrato-oculos-480.avif 480w, assets/img/fotos/retrato-oculos-800.avif 800w, assets/img/fotos/retrato-oculos-1200.avif 1200w, assets/img/fotos/retrato-oculos-1600.avif 1600w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/retrato-oculos-480.webp 480w, assets/img/fotos/retrato-oculos-800.webp 800w, assets/img/fotos/retrato-oculos-1200.webp 1200w, assets/img/fotos/retrato-oculos-1600.webp 1600w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/retrato-oculos-800.webp\" width=\"1600\" height=\"2000\" alt=\"Ana Paula Costa de óculos, sorrindo com a mão no rosto, diante do notebook no escritório, com um mapa-múndi na parede\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "atendimento-online": {
+      "id": "atendimento-online",
+      "alt": "Ana Paula Costa de óculos, sorrindo para a câmera, em casa",
+      "uso": "Como funciona o atendimento online",
+      "fase": "todas, inclusive 40+",
+      "origem": "fotos/04-selfie-trabalhando-notebook-sorrindo.jpg",
+      "proporcao": "4/5",
+      "width": 748,
+      "height": 935,
+      "larguras": [
+        480,
+        748
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/atendimento-online-748.webp",
+      "srcset_webp": "assets/img/fotos/atendimento-online-480.webp 480w, assets/img/fotos/atendimento-online-748.webp 748w",
+      "srcset_avif": "assets/img/fotos/atendimento-online-480.avif 480w, assets/img/fotos/atendimento-online-748.avif 748w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/atendimento-online-480.avif 480w, assets/img/fotos/atendimento-online-748.avif 748w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/atendimento-online-480.webp 480w, assets/img/fotos/atendimento-online-748.webp 748w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/atendimento-online-748.webp\" width=\"748\" height=\"935\" alt=\"Ana Paula Costa de óculos, sorrindo para a câmera, em casa\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "formatura": {
+      "id": "formatura",
+      "alt": "Ana Paula Costa de beca, segurando o diploma de Nutrição, com o Pão de Açúcar ao fundo",
+      "uso": "Sobre (a virada de rota) e bloco de credenciais",
+      "fase": "todas",
+      "origem": "fotos/15-formatura-nutricao-diploma-pao-de-acucar.jpg",
+      "proporcao": "4/5",
+      "width": 1152,
+      "height": 1440,
+      "larguras": [
+        480,
+        800,
+        1152
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/formatura-800.webp",
+      "srcset_webp": "assets/img/fotos/formatura-480.webp 480w, assets/img/fotos/formatura-800.webp 800w, assets/img/fotos/formatura-1152.webp 1152w",
+      "srcset_avif": "assets/img/fotos/formatura-480.avif 480w, assets/img/fotos/formatura-800.avif 800w, assets/img/fotos/formatura-1152.avif 1152w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/formatura-480.avif 480w, assets/img/fotos/formatura-800.avif 800w, assets/img/fotos/formatura-1152.avif 1152w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/formatura-480.webp 480w, assets/img/fotos/formatura-800.webp 800w, assets/img/fotos/formatura-1152.webp 1152w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/formatura-800.webp\" width=\"1152\" height=\"1440\" alt=\"Ana Paula Costa de beca, segurando o diploma de Nutrição, com o Pão de Açúcar ao fundo\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "gestante-ar-livre": {
+      "id": "gestante-ar-livre",
+      "alt": "Ana Paula Costa grávida, de camisa branca aberta, encostada numa parede de pedra ao ar livre, sorrindo",
+      "uso": "Gestação (cartão, comunidade, ferro)",
+      "fase": "gestacao",
+      "origem": "drive/ensaio-gestante-antonio/IMG_0188.jpg",
+      "proporcao": "4/5",
+      "width": 1584,
+      "height": 1980,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1584
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/gestante-ar-livre-800.webp",
+      "srcset_webp": "assets/img/fotos/gestante-ar-livre-480.webp 480w, assets/img/fotos/gestante-ar-livre-800.webp 800w, assets/img/fotos/gestante-ar-livre-1200.webp 1200w, assets/img/fotos/gestante-ar-livre-1584.webp 1584w",
+      "srcset_avif": "assets/img/fotos/gestante-ar-livre-480.avif 480w, assets/img/fotos/gestante-ar-livre-800.avif 800w, assets/img/fotos/gestante-ar-livre-1200.avif 1200w, assets/img/fotos/gestante-ar-livre-1584.avif 1584w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/gestante-ar-livre-480.avif 480w, assets/img/fotos/gestante-ar-livre-800.avif 800w, assets/img/fotos/gestante-ar-livre-1200.avif 1200w, assets/img/fotos/gestante-ar-livre-1584.avif 1584w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/gestante-ar-livre-480.webp 480w, assets/img/fotos/gestante-ar-livre-800.webp 800w, assets/img/fotos/gestante-ar-livre-1200.webp 1200w, assets/img/fotos/gestante-ar-livre-1584.webp 1584w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/gestante-ar-livre-800.webp\" width=\"1584\" height=\"1980\" alt=\"Ana Paula Costa grávida, de camisa branca aberta, encostada numa parede de pedra ao ar livre, sorrindo\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "gestacao-janela": {
+      "id": "gestacao-janela",
+      "alt": "Ana Paula Costa grávida, de camisa branca, segurando um copo de água perto da janela e olhando para fora",
+      "uso": "Cartão Gestação e aula do ferro",
+      "fase": "gestacao",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9601.jpg",
+      "proporcao": "4/5",
+      "width": 1365,
+      "height": 1706,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1365
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/gestacao-janela-800.webp",
+      "srcset_webp": "assets/img/fotos/gestacao-janela-480.webp 480w, assets/img/fotos/gestacao-janela-800.webp 800w, assets/img/fotos/gestacao-janela-1200.webp 1200w, assets/img/fotos/gestacao-janela-1365.webp 1365w",
+      "srcset_avif": "assets/img/fotos/gestacao-janela-480.avif 480w, assets/img/fotos/gestacao-janela-800.avif 800w, assets/img/fotos/gestacao-janela-1200.avif 1200w, assets/img/fotos/gestacao-janela-1365.avif 1365w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/gestacao-janela-480.avif 480w, assets/img/fotos/gestacao-janela-800.avif 800w, assets/img/fotos/gestacao-janela-1200.avif 1200w, assets/img/fotos/gestacao-janela-1365.avif 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/gestacao-janela-480.webp 480w, assets/img/fotos/gestacao-janela-800.webp 800w, assets/img/fotos/gestacao-janela-1200.webp 1200w, assets/img/fotos/gestacao-janela-1365.webp 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/gestacao-janela-800.webp\" width=\"1365\" height=\"1706\" alt=\"Ana Paula Costa grávida, de camisa branca, segurando um copo de água perto da janela e olhando para fora\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "gestacao-janela-sorriso": {
+      "id": "gestacao-janela-sorriso",
+      "alt": "Ana Paula Costa grávida, de camisa branca, segurando um copo de água perto da janela e sorrindo para a câmera",
+      "uso": "Gestação, alternativa",
+      "fase": "gestacao",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9606.jpg",
+      "proporcao": "4/5",
+      "width": 1365,
+      "height": 1706,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1365
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/gestacao-janela-sorriso-800.webp",
+      "srcset_webp": "assets/img/fotos/gestacao-janela-sorriso-480.webp 480w, assets/img/fotos/gestacao-janela-sorriso-800.webp 800w, assets/img/fotos/gestacao-janela-sorriso-1200.webp 1200w, assets/img/fotos/gestacao-janela-sorriso-1365.webp 1365w",
+      "srcset_avif": "assets/img/fotos/gestacao-janela-sorriso-480.avif 480w, assets/img/fotos/gestacao-janela-sorriso-800.avif 800w, assets/img/fotos/gestacao-janela-sorriso-1200.avif 1200w, assets/img/fotos/gestacao-janela-sorriso-1365.avif 1365w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/gestacao-janela-sorriso-480.avif 480w, assets/img/fotos/gestacao-janela-sorriso-800.avif 800w, assets/img/fotos/gestacao-janela-sorriso-1200.avif 1200w, assets/img/fotos/gestacao-janela-sorriso-1365.avif 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/gestacao-janela-sorriso-480.webp 480w, assets/img/fotos/gestacao-janela-sorriso-800.webp 800w, assets/img/fotos/gestacao-janela-sorriso-1200.webp 1200w, assets/img/fotos/gestacao-janela-sorriso-1365.webp 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/gestacao-janela-sorriso-800.webp\" width=\"1365\" height=\"1706\" alt=\"Ana Paula Costa grávida, de camisa branca, segurando um copo de água perto da janela e sorrindo para a câmera\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "retrato-evento": {
+      "id": "retrato-evento",
+      "alt": "Retrato de Ana Paula Costa sorrindo, de blazer preto, com a mão no queixo, diante de um fundo escuro",
+      "uso": "Modo 40+ e menopausa (sem gestação)",
+      "fase": "40-mais",
+      "origem": "drive/evento-nutricao/v2_fab6801d.jpg",
+      "proporcao": "4/5",
+      "width": 1367,
+      "height": 1709,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1367
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/retrato-evento-800.webp",
+      "srcset_webp": "assets/img/fotos/retrato-evento-480.webp 480w, assets/img/fotos/retrato-evento-800.webp 800w, assets/img/fotos/retrato-evento-1200.webp 1200w, assets/img/fotos/retrato-evento-1367.webp 1367w",
+      "srcset_avif": "assets/img/fotos/retrato-evento-480.avif 480w, assets/img/fotos/retrato-evento-800.avif 800w, assets/img/fotos/retrato-evento-1200.avif 1200w, assets/img/fotos/retrato-evento-1367.avif 1367w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/retrato-evento-480.avif 480w, assets/img/fotos/retrato-evento-800.avif 800w, assets/img/fotos/retrato-evento-1200.avif 1200w, assets/img/fotos/retrato-evento-1367.avif 1367w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/retrato-evento-480.webp 480w, assets/img/fotos/retrato-evento-800.webp 800w, assets/img/fotos/retrato-evento-1200.webp 1200w, assets/img/fotos/retrato-evento-1367.webp 1367w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/retrato-evento-800.webp\" width=\"1367\" height=\"1709\" alt=\"Retrato de Ana Paula Costa sorrindo, de blazer preto, com a mão no queixo, diante de um fundo escuro\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "retrato-evento-bracos": {
+      "id": "retrato-evento-bracos",
+      "alt": "Retrato de Ana Paula Costa sorrindo, de blazer preto e braços cruzados, diante de um fundo escuro",
+      "uso": "Modo 40+, alternativa",
+      "fase": "40-mais",
+      "origem": "drive/evento-nutricao/v2_a46a45b0.jpg",
+      "proporcao": "4/5",
+      "width": 1367,
+      "height": 1709,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1367
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/retrato-evento-bracos-800.webp",
+      "srcset_webp": "assets/img/fotos/retrato-evento-bracos-480.webp 480w, assets/img/fotos/retrato-evento-bracos-800.webp 800w, assets/img/fotos/retrato-evento-bracos-1200.webp 1200w, assets/img/fotos/retrato-evento-bracos-1367.webp 1367w",
+      "srcset_avif": "assets/img/fotos/retrato-evento-bracos-480.avif 480w, assets/img/fotos/retrato-evento-bracos-800.avif 800w, assets/img/fotos/retrato-evento-bracos-1200.avif 1200w, assets/img/fotos/retrato-evento-bracos-1367.avif 1367w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/retrato-evento-bracos-480.avif 480w, assets/img/fotos/retrato-evento-bracos-800.avif 800w, assets/img/fotos/retrato-evento-bracos-1200.avif 1200w, assets/img/fotos/retrato-evento-bracos-1367.avif 1367w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/retrato-evento-bracos-480.webp 480w, assets/img/fotos/retrato-evento-bracos-800.webp 800w, assets/img/fotos/retrato-evento-bracos-1200.webp 1200w, assets/img/fotos/retrato-evento-bracos-1367.webp 1367w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/retrato-evento-bracos-800.webp\" width=\"1367\" height=\"1709\" alt=\"Retrato de Ana Paula Costa sorrindo, de blazer preto e braços cruzados, diante de um fundo escuro\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "retrato-close": {
+      "id": "retrato-close",
+      "alt": "Ana Paula Costa de camisa jeans, com as mãos unidas perto do rosto, sorrindo para a câmera",
+      "uso": "Chamadas finais, Sobre, 40+ (close sem barriga)",
+      "fase": "todas, inclusive 40+",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9675.jpg",
+      "proporcao": "4/5",
+      "width": 1365,
+      "height": 1706,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1365
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/retrato-close-800.webp",
+      "srcset_webp": "assets/img/fotos/retrato-close-480.webp 480w, assets/img/fotos/retrato-close-800.webp 800w, assets/img/fotos/retrato-close-1200.webp 1200w, assets/img/fotos/retrato-close-1365.webp 1365w",
+      "srcset_avif": "assets/img/fotos/retrato-close-480.avif 480w, assets/img/fotos/retrato-close-800.avif 800w, assets/img/fotos/retrato-close-1200.avif 1200w, assets/img/fotos/retrato-close-1365.avif 1365w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/retrato-close-480.avif 480w, assets/img/fotos/retrato-close-800.avif 800w, assets/img/fotos/retrato-close-1200.avif 1200w, assets/img/fotos/retrato-close-1365.avif 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/retrato-close-480.webp 480w, assets/img/fotos/retrato-close-800.webp 800w, assets/img/fotos/retrato-close-1200.webp 1200w, assets/img/fotos/retrato-close-1365.webp 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/retrato-close-800.webp\" width=\"1365\" height=\"1706\" alt=\"Ana Paula Costa de camisa jeans, com as mãos unidas perto do rosto, sorrindo para a câmera\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "poltrona-notebook": {
+      "id": "poltrona-notebook",
+      "alt": "Ana Paula Costa sentada num sofá claro com o notebook, numa sala com planta e luz natural",
+      "uso": "Como funciona, atendimento",
+      "fase": "todas",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9611.jpg",
+      "proporcao": "4/5",
+      "width": 1365,
+      "height": 1706,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1365
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/poltrona-notebook-800.webp",
+      "srcset_webp": "assets/img/fotos/poltrona-notebook-480.webp 480w, assets/img/fotos/poltrona-notebook-800.webp 800w, assets/img/fotos/poltrona-notebook-1200.webp 1200w, assets/img/fotos/poltrona-notebook-1365.webp 1365w",
+      "srcset_avif": "assets/img/fotos/poltrona-notebook-480.avif 480w, assets/img/fotos/poltrona-notebook-800.avif 800w, assets/img/fotos/poltrona-notebook-1200.avif 1200w, assets/img/fotos/poltrona-notebook-1365.avif 1365w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/poltrona-notebook-480.avif 480w, assets/img/fotos/poltrona-notebook-800.avif 800w, assets/img/fotos/poltrona-notebook-1200.avif 1200w, assets/img/fotos/poltrona-notebook-1365.avif 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/poltrona-notebook-480.webp 480w, assets/img/fotos/poltrona-notebook-800.webp 800w, assets/img/fotos/poltrona-notebook-1200.webp 1200w, assets/img/fotos/poltrona-notebook-1365.webp 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/poltrona-notebook-800.webp\" width=\"1365\" height=\"1706\" alt=\"Ana Paula Costa sentada num sofá claro com o notebook, numa sala com planta e luz natural\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "tablet": {
+      "id": "tablet",
+      "alt": "Ana Paula Costa sorrindo enquanto olha um tablet, sentada num sofá claro ao lado de uma planta",
+      "uso": "Plano no aplicativo, acompanhamento",
+      "fase": "todas",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9621.jpg",
+      "proporcao": "4/5",
+      "width": 1360,
+      "height": 1700,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1360
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/tablet-800.webp",
+      "srcset_webp": "assets/img/fotos/tablet-480.webp 480w, assets/img/fotos/tablet-800.webp 800w, assets/img/fotos/tablet-1200.webp 1200w, assets/img/fotos/tablet-1360.webp 1360w",
+      "srcset_avif": "assets/img/fotos/tablet-480.avif 480w, assets/img/fotos/tablet-800.avif 800w, assets/img/fotos/tablet-1200.avif 1200w, assets/img/fotos/tablet-1360.avif 1360w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/tablet-480.avif 480w, assets/img/fotos/tablet-800.avif 800w, assets/img/fotos/tablet-1200.avif 1200w, assets/img/fotos/tablet-1360.avif 1360w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/tablet-480.webp 480w, assets/img/fotos/tablet-800.webp 800w, assets/img/fotos/tablet-1200.webp 1200w, assets/img/fotos/tablet-1360.webp 1360w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/tablet-800.webp\" width=\"1360\" height=\"1700\" alt=\"Ana Paula Costa sorrindo enquanto olha um tablet, sentada num sofá claro ao lado de uma planta\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "livro": {
+      "id": "livro",
+      "alt": "Ana Paula Costa de camiseta branca e calça jeans, segurando um livro aberto numa sala clara",
+      "uso": "Conteúdos, Semana Bem Nutrida",
+      "fase": "gestacao",
+      "origem": "drive/ensaio-profissional-gravida/IMG_9579.jpg",
+      "proporcao": "4/5",
+      "width": 1365,
+      "height": 1707,
+      "larguras": [
+        480,
+        800,
+        1200,
+        1365
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/livro-800.webp",
+      "srcset_webp": "assets/img/fotos/livro-480.webp 480w, assets/img/fotos/livro-800.webp 800w, assets/img/fotos/livro-1200.webp 1200w, assets/img/fotos/livro-1365.webp 1365w",
+      "srcset_avif": "assets/img/fotos/livro-480.avif 480w, assets/img/fotos/livro-800.avif 800w, assets/img/fotos/livro-1200.avif 1200w, assets/img/fotos/livro-1365.avif 1365w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/livro-480.avif 480w, assets/img/fotos/livro-800.avif 800w, assets/img/fotos/livro-1200.avif 1200w, assets/img/fotos/livro-1365.avif 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/livro-480.webp 480w, assets/img/fotos/livro-800.webp 800w, assets/img/fotos/livro-1200.webp 1200w, assets/img/fotos/livro-1365.webp 1365w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/livro-800.webp\" width=\"1365\" height=\"1707\" alt=\"Ana Paula Costa de camiseta branca e calça jeans, segurando um livro aberto numa sala clara\" loading=\"lazy\" decoding=\"async\"></picture>"
+    },
+    "retrato-perfil": {
+      "id": "retrato-perfil",
+      "alt": "Retrato de estúdio de Ana Paula Costa, de blusa caramelo, sorrindo de leve diante de um fundo cinza claro",
+      "uso": "Avatar de autora, assinatura de texto, depoimento da Ana",
+      "fase": "todas, inclusive 40+",
+      "origem": "fotos/00-foto-de-perfil-atual.jpg",
+      "proporcao": "1/1",
+      "width": 965,
+      "height": 965,
+      "larguras": [
+        480,
+        800,
+        965
+      ],
+      "formatos": [
+        "avif",
+        "webp"
+      ],
+      "src": "assets/img/fotos/retrato-perfil-800.webp",
+      "srcset_webp": "assets/img/fotos/retrato-perfil-480.webp 480w, assets/img/fotos/retrato-perfil-800.webp 800w, assets/img/fotos/retrato-perfil-965.webp 965w",
+      "srcset_avif": "assets/img/fotos/retrato-perfil-480.avif 480w, assets/img/fotos/retrato-perfil-800.avif 800w, assets/img/fotos/retrato-perfil-965.avif 965w",
+      "html": "<picture><source type=\"image/avif\" srcset=\"assets/img/fotos/retrato-perfil-480.avif 480w, assets/img/fotos/retrato-perfil-800.avif 800w, assets/img/fotos/retrato-perfil-965.avif 965w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><source type=\"image/webp\" srcset=\"assets/img/fotos/retrato-perfil-480.webp 480w, assets/img/fotos/retrato-perfil-800.webp 800w, assets/img/fotos/retrato-perfil-965.webp 965w\" sizes=\"(min-width: 960px) 40vw, 92vw\"><img src=\"assets/img/fotos/retrato-perfil-800.webp\" width=\"965\" height=\"965\" alt=\"Retrato de estúdio de Ana Paula Costa, de blusa caramelo, sorrindo de leve diante de um fundo cinza claro\" loading=\"lazy\" decoding=\"async\"></picture>"
+    }
+  }
+}

@@ -1,0 +1,424 @@
+/* Ferro Sem Sofrimento · isca gratuita (modo gestação)
+   CSS próprio da página (prefixo .fer / escopo body.pg-ferro).
+   Usa as variáveis de tokens.css (gerado por _dev/sync_marca.py).
+   Enquanto o site.css global não existe, traz também a base mínima da página,
+   toda dentro do escopo .pg-ferro. O que deveria ir para o global está em _projeto/pedidos-css.md. */
+
+@font-face{font-family:'Literata';src:url('../fonts/literata-var.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Literata';src:url('../fonts/literata-italic-var.woff2') format('woff2');font-weight:400 700;font-style:italic;font-display:swap}
+@font-face{font-family:'Ana Numerais';src:url('../fonts/literata-var.woff2') format('woff2');font-weight:400 700;font-display:swap;unicode-range:U+0030-0039}
+@font-face{font-family:'Atkinson Hyperlegible Next';src:url('../fonts/atkinson-next-var.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Atkinson Hyperlegible Next';src:url('../fonts/atkinson-next-italic-var.woff2') format('woff2');font-weight:400 700;font-style:italic;font-display:swap}
+
+/* ------------------------------------------------------------ base */
+.pg-ferro{
+  --fer-largura:1180px;
+  --fer-gutter:clamp(16px,4vw,40px);
+  --fer-secao:clamp(72px,9vw,120px);
+  --botao:var(--cor-salvia-funda);
+  --botao-hover:#275D51;
+  --linha:rgba(16,58,64,.14);
+  --suave:#4F5E5B;            /* 5,5:1 sobre Bruma, 6,4:1 sobre Algodão */
+  --barra-h:0px;
+  margin:0;background:var(--fundo);color:var(--texto);
+  font-family:var(--fonte-texto);font-size:var(--texto-corpo);line-height:var(--entrelinha-corpo);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+}
+.pg-ferro *,.pg-ferro *::before,.pg-ferro *::after{box-sizing:border-box}
+:where(.pg-ferro) :where(img,svg,picture,video){max-width:100%;display:block}
+:where(.pg-ferro) img{height:auto}
+:where(.pg-ferro) :where(h1,h2,h3,p,ul,ol,figure,blockquote){margin:0}
+:where(.pg-ferro) :where(ul,ol){padding:0;list-style:none}
+.pg-ferro h1,.pg-ferro h2,.pg-ferro .fer-h3{
+  font-family:var(--fonte-titulo);font-weight:var(--peso-titulo);font-variation-settings:'opsz' var(--opsz-titulo);
+  color:var(--titulo);letter-spacing:-.012em;text-wrap:balance;
+}
+.pg-ferro h2{font-size:var(--texto-h2);line-height:1.14}
+.pg-ferro .fer-h3{font-size:var(--texto-h3);line-height:1.22;font-weight:560}
+:where(.pg-ferro) p{text-wrap:pretty}
+.pg-ferro a{color:var(--cor-salvia-funda);text-underline-offset:.18em;text-decoration-thickness:1px}
+.pg-ferro a:hover{text-decoration-thickness:2px}
+.pg-ferro :focus-visible{outline:3px solid var(--cor-caramelo-tostado);outline-offset:3px;border-radius:6px}
+.pg-ferro strong{font-weight:650}
+.pg-ferro button{font:inherit}
+.fer-pular{position:absolute;left:12px;top:-60px;z-index:100;background:var(--cor-mar);color:var(--cor-algodao)!important;padding:10px 16px;border-radius:var(--raio-p);text-decoration:none;font-weight:600}
+.fer-pular:focus{top:12px}
+.fer-vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.fer-wrap{width:100%;max-width:calc(var(--fer-largura) + 2*var(--fer-gutter));margin-inline:auto;padding-inline:var(--fer-gutter)}
+.fer-estreito{max-width:calc(780px + 2*var(--fer-gutter))}
+.fer-secao{padding-block:var(--fer-secao)}
+.fer-lead{font-size:clamp(18px,1.55vw,20px);line-height:1.62}
+.fer-corpo > * + *{margin-top:1.05em}
+.fer-cab{max-width:720px}
+.fer-cab h2{margin-bottom:var(--esp-4)}
+
+/* ------------------------------------------------------------ pendentes (CONFIG) */
+
+/* ------------------------------------------------------------ faixa de prévia */
+.fer-previa{
+  background:var(--cor-mar);color:var(--cor-algodao);font-size:14px;line-height:1.4;text-align:center;
+  padding:6px var(--fer-gutter);letter-spacing:.02em;
+}
+.fer-previa span{display:inline-flex;align-items:center;gap:8px}
+.fer-previa span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cor-salvia)}
+.fer-previa[hidden]{display:none}
+
+/* ------------------------------------------------------------ cabeçalho enxuto */
+.fer-topo{border-bottom:1px solid var(--linha);background:var(--fundo)}
+.fer-topo .fer-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.fer-logo{display:block;flex:none;border-radius:6px}
+.fer-logo img{width:300px;height:auto}
+.fer-selo-crn{font-size:14px;line-height:1.2;font-weight:600;color:var(--cor-mar);letter-spacing:.02em;white-space:nowrap}
+.fer-selo-crn .pendente{font-weight:600}
+@media (max-width:759px){
+  .fer-topo .fer-wrap{min-height:56px}
+  .fer-logo img{width:166px}
+  .fer-selo-crn{font-size:13px}
+}
+@media (max-width:359px){.fer-logo img{width:44px}}
+
+/* ------------------------------------------------------------ botão (único CTA) */
+.fer-botao{
+  display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  min-height:56px;padding:15px 28px;border-radius:var(--raio-pilula);border:0;
+  background:var(--botao);color:var(--cor-algodao)!important;text-decoration:none!important;
+  font:600 var(--texto-botao)/1.25 var(--fonte-texto);letter-spacing:.01em;text-align:center;
+  box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 8px 22px -10px rgba(16,58,64,.55);
+  transition:background var(--t-rapido) var(--mare),transform var(--t-rapido) var(--mare),box-shadow var(--t-base) var(--mare);
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.fer-botao:hover{background:var(--botao-hover);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 14px 28px -12px rgba(16,58,64,.6)}
+.fer-botao:active{transform:translateY(0)}
+.fer-botao:disabled{opacity:.7;cursor:progress;transform:none}
+.fer-seta{width:34px;height:auto;aspect-ratio:57.3/18.7;flex:none;color:currentColor;transition:transform var(--t-base) var(--mare)}
+.fer-seta .ponto-svg{fill:var(--cor-salvia-clara)!important}
+.fer-botao:hover .fer-seta{transform:translateX(4px)}
+.fer-botao-largo{width:100%}
+.fer-micro{
+  display:flex;align-items:flex-start;gap:8px;margin-top:14px;max-width:30em;
+  font-size:15px;line-height:1.45;color:var(--suave);
+}
+.fer-icone-p{width:18px;height:18px;flex:none;margin-top:1px;opacity:.85}
+.fer-acao{container-type:inline-size}
+@container (max-width:340px){.fer-botao .fer-seta{display:none}}
+.fer-acao-centro{display:flex;flex-direction:column;align-items:center;text-align:center}
+.fer-acao-centro .fer-micro{justify-content:center}
+@media (max-width:479px){.fer-botao{width:100%;padding-inline:18px;gap:12px}}
+
+/* ------------------------------------------------------------ 2. topo */
+.fer-hero{position:relative;padding-block:clamp(28px,5.5vw,80px) clamp(72px,8vw,112px);overflow:clip}
+.fer-hero .fer-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.fer-hero-texto{max-width:600px}
+.fer-hero h1{font-size:clamp(31px,4.6vw,58px);line-height:1.07}
+.fer-sub{
+  margin-top:clamp(14px,1.8vw,20px);
+  font-family:var(--fonte-titulo);font-weight:480;font-variation-settings:'opsz' 36;
+  font-size:clamp(22px,2.3vw,28px);line-height:1.3;color:var(--cor-mar);
+}
+.fer-sub em{font-style:italic;color:var(--cor-salvia-funda);font-weight:560;
+  background:linear-gradient(transparent 70%,rgba(99,175,156,.32) 70%);padding-inline:2px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.fer-hero .fer-lead{margin-top:clamp(16px,2vw,24px);max-width:34em}
+.fer-hero .fer-acao{margin-top:clamp(24px,3vw,34px)}
+.fer-so-celular{display:none}
+
+.fer-hero-midia{position:relative;justify-self:end;width:100%;max-width:520px}
+.fer-arco{position:relative;aspect-ratio:4/5;border-radius:999px 999px 0 0;background:var(--cor-salvia);padding:14px 14px 0}
+.fer-arco > picture,.fer-arco > picture img,.fer-arco > video{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 0 0}
+.fer-foto-topo img{object-position:46% 28%}
+.fer-arco video{background:var(--cor-mar)}
+.fer-cartao-aula{
+  position:absolute;left:-32px;bottom:30px;z-index:2;
+  display:flex;gap:12px;align-items:center;max-width:280px;
+  background:var(--cor-algodao);border-radius:var(--raio-m);padding:14px 18px 14px 14px;
+  box-shadow:var(--sombra-cartao);
+}
+.fer-cartao-aula-icone{width:44px;height:44px;border-radius:12px;background:var(--cor-bruma);display:grid;place-items:center;flex:none;color:var(--cor-mar)}
+.fer-cartao-aula-icone svg{width:24px;height:24px}
+.fer-cartao-aula p{font-size:15px;line-height:1.35;color:var(--cor-mar)}
+.fer-cartao-aula strong{display:block;font-family:var(--fonte-titulo);font-weight:580;font-size:18px;margin-bottom:2px}
+.fer-legenda-midia{margin-top:14px;font-size:15px;line-height:1.45;color:var(--suave);font-style:italic}
+.fer-aviso-gravacao{margin-top:14px;font-size:14px;line-height:1.45;color:var(--suave)}
+.fer-aviso-gravacao[hidden],.fer-legenda-midia[hidden]{display:none}
+
+.fer-traco{color:var(--cor-mar);height:auto}
+.fer-traco-topo{position:absolute;left:calc(50% - 300px);bottom:28px;width:min(600px,80vw);opacity:.9}
+
+@media (max-width:959px){
+  .fer-hero .fer-wrap{grid-template-columns:1fr;gap:44px}
+  .fer-hero-midia{justify-self:center;max-width:400px}
+  .fer-cartao-aula{left:-10px;bottom:20px}
+  .fer-traco-topo{left:var(--fer-gutter);transform:none;width:min(420px,calc(100% - 2*var(--fer-gutter)))}
+}
+@media (max-width:640px){
+  .fer-so-desktop{display:none}
+  .fer-so-celular{display:block}
+  .fer-hero{padding-top:22px}
+  .fer-hero h1{font-size:31px;line-height:1.1}
+  .fer-sub{font-size:21px;margin-top:10px}
+  .fer-hero .fer-lead{margin-top:12px;font-size:17px;line-height:1.55}
+  .fer-hero .fer-acao{margin-top:20px}
+  .rotulo{font-size:14px;margin-bottom:12px}
+  .fer-hero-midia{max-width:340px}
+  .fer-cartao-aula{max-width:250px;padding:12px 14px 12px 12px}
+  .fer-cartao-aula strong{font-size:17px}
+}
+@media (max-width:359px){
+  .fer-hero h1{font-size:29px}
+  .fer-cartao-aula{left:0;right:0;margin-inline:auto;max-width:calc(100% - 24px)}
+}
+
+/* ------------------------------------------------------------ 4. o que chega */
+.fer-recebe{background:var(--cor-algodao)}
+.fer-cartoes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(36px,5vw,56px);counter-reset:none}
+.fer-cartao{
+  position:relative;display:flex;flex-direction:column;gap:18px;
+  background:#FBFAF7;border:1px solid var(--linha);border-radius:var(--raio-g);
+  padding:clamp(24px,2.6vw,34px);overflow:hidden;
+}
+.fer-cartao{transition:border-color var(--t-base) var(--mare),box-shadow var(--t-base) var(--mare)}
+.fer-cartao:hover{border-color:rgba(47,110,96,.4);box-shadow:var(--sombra-suave)}
+.fer-num{
+  font-family:var(--fonte-titulo);font-weight:560;font-variation-settings:'opsz' 72;
+  font-size:64px;line-height:.9;color:var(--cor-salvia-funda);
+  display:inline-flex;align-items:flex-start;gap:4px;
+}
+.fer-num::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--cor-salvia);margin-top:44px}
+.fer-cartao .fer-h3{margin-bottom:10px}
+.fer-cartao p{font-size:17px;line-height:1.6}
+.fer-cartao-icone{position:absolute;right:clamp(22px,2.4vw,32px);top:clamp(26px,2.8vw,36px);width:26px;height:26px;color:var(--cor-salvia-funda);opacity:.75}
+.fer-recebe .fer-acao-centro{margin-top:clamp(36px,5vw,56px)}
+@media (max-width:959px){.fer-cartoes{grid-template-columns:1fr;max-width:640px}}
+@media (max-width:640px){
+  .fer-cartao{flex-direction:row;gap:16px;align-items:flex-start;padding:22px 20px}
+  .fer-num{font-size:46px;flex:none;width:40px}
+  .fer-num::after{display:none}
+  .fer-cartao-icone{display:none}
+  .fer-cartao .fer-h3{font-size:22px;margin-bottom:8px}
+}
+
+/* ------------------------------------------------------------ 5. bloco escuro */
+.fer-escuro{
+  position:relative;background:var(--cor-mar);color:var(--cor-algodao);overflow:clip;
+  --titulo:var(--cor-algodao);
+}
+.fer-escuro::before{content:"";position:absolute;inset:0;background:url('../marca/rota/padrao-fundo-escuro.svg') center/cover no-repeat;opacity:.28;pointer-events:none}
+.fer-escuro .fer-wrap{position:relative}
+.fer-cab-escuro .fer-lead{color:rgba(242,240,235,.86)}
+.fer-frases{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:clamp(16px,2vw,24px);margin-top:clamp(40px,5vw,64px)}
+.fer-frases li{
+  position:relative;background:var(--cor-mar-superficie);border-radius:var(--raio-g);
+  padding:clamp(24px,2.6vw,34px) clamp(24px,2.8vw,36px);
+  border:1px solid rgba(169,211,198,.14);display:flex;align-items:center;
+}
+.fer-frases blockquote p{
+  font-family:var(--fonte-titulo);font-style:italic;font-weight:440;font-variation-settings:'opsz' 36;
+  font-size:clamp(21px,1.8vw,24px);line-height:1.42;color:var(--cor-algodao);text-wrap:pretty;
+}
+.fer-frases li:nth-child(2){grid-column:1;grid-row:1 / span 3;background:transparent;border-color:rgba(169,211,198,.28);padding:clamp(32px,4vw,56px)}
+
+.fer-frases li:nth-child(2) blockquote p{font-size:clamp(26px,2.7vw,36px);line-height:1.3;font-weight:420}
+.fer-frases li:not(:nth-child(2)){grid-column:2}
+.fer-nota-escuro{margin-top:clamp(28px,4vw,40px);max-width:52em;font-size:16px;line-height:1.55;color:rgba(242,240,235,.78)}
+@media (max-width:759px){
+  .fer-frases{grid-template-columns:1fr}
+  .fer-frases li:nth-child(n){grid-column:auto;grid-row:auto}
+  .fer-frases li:nth-child(2) blockquote p{font-size:24px}
+}
+
+/* ------------------------------------------------------------ 6. para quem é */
+.fer-quem-e{background:var(--cor-algodao)}
+.fer-quem-e h2{margin-bottom:clamp(28px,4vw,40px)}
+.fer-lista{display:grid;gap:0;border-top:1px solid var(--linha)}
+.fer-lista li{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--linha)}
+.fer-lista svg,.fer-nao svg{width:22px;height:22px;flex:none;margin-top:3px}
+.fer-lista svg{color:var(--cor-salvia-funda);opacity:.85}
+.fer-nao{display:flex;gap:16px;align-items:flex-start;margin-top:clamp(32px,4vw,44px);padding:20px 22px;border-radius:var(--raio-m);background:var(--cor-pedra);color:var(--texto)}
+.fer-nao svg{color:var(--suave)}
+
+/* ------------------------------------------------------------ 7. quem vai te ensinar */
+.fer-autora{background:var(--fundo)}
+.fer-autora .fer-wrap{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:clamp(36px,7vw,104px);align-items:center}
+.fer-autora-foto{max-width:440px;width:100%}
+.fer-arco-autora{background:var(--cor-salvia)}
+.fer-arco-autora img{object-position:50% 30%}
+.fer-autora h2{font-size:clamp(30px,3.6vw,44px)}
+.fer-assinatura{margin-top:12px;font-size:16px;font-weight:600;color:var(--cor-salvia-funda);letter-spacing:.01em}
+.fer-autora .fer-corpo{margin-top:clamp(20px,2.6vw,28px);max-width:34em}
+.fer-frase-marca{
+  font-family:var(--fonte-titulo);font-style:italic;font-weight:480;font-variation-settings:'opsz' 36;
+  font-size:clamp(21px,1.9vw,24px);line-height:1.4;color:var(--cor-mar);
+  padding-left:18px;border-left:3px solid var(--cor-salvia)
+}
+.fer-numeros{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(28px,3.4vw,40px)}
+.fer-numeros li{background:var(--cor-algodao);border-radius:var(--raio-m);padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.fer-numeros strong{font-family:var(--fonte-titulo);font-weight:580;font-variation-settings:'opsz' 48;font-size:26px;line-height:1.08;color:var(--cor-mar)}
+.fer-numeros li:last-child strong{font-size:21px;line-height:1.15}
+.fer-numeros li > span{font-size:16px;line-height:1.42;color:var(--suave)}
+@media (max-width:959px){
+  .fer-autora .fer-wrap{grid-template-columns:minmax(0,1fr)}
+  .fer-autora-foto{max-width:360px;justify-self:center}
+}
+@media (max-width:640px){
+  .fer-numeros{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .fer-numeros li:last-child{grid-column:1/-1}
+  .fer-numeros strong{font-size:22px}
+}
+@media (max-width:359px){.fer-numeros{grid-template-columns:minmax(0,1fr)}}
+
+/* ------------------------------------------------------------ 8. dúvidas */
+.fer-faq{background:var(--cor-algodao)}
+.fer-faq .fer-wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(32px,6vw,88px);align-items:start}
+.fer-faq-cab{position:sticky;top:32px}
+.fer-traco-faq{width:200px;margin-top:24px;color:var(--cor-mar)}
+@media (max-width:959px){
+  .fer-faq .fer-wrap{grid-template-columns:1fr}
+  .fer-faq-cab{position:static}
+}
+
+/* ------------------------------------------------------------ 9. pedido final */
+.fer-final{background:var(--cor-pedra)}
+.fer-final-caixa{
+  position:relative;text-align:center;background:var(--cor-algodao);border-radius:32px;
+  padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px) clamp(56px,6vw,80px);
+  box-shadow:var(--sombra-suave);overflow:hidden;
+}
+.fer-final h2{font-size:clamp(30px,3.6vw,44px);max-width:16em;margin-inline:auto}
+.fer-final .fer-lead{margin:18px auto 0;max-width:32em}
+.fer-final .fer-acao{margin-top:clamp(26px,3vw,34px)}
+.fer-traco-final{width:min(360px,70%);margin:clamp(32px,4vw,44px) auto 0;color:var(--cor-mar)}
+
+/* ------------------------------------------------------------ 10. rodapé */
+.fer-rodape{background:var(--cor-algodao);border-top:1px solid var(--linha);padding:clamp(40px,5vw,56px) 0 calc(clamp(32px,4vw,48px) + var(--barra-h));font-size:15px;line-height:1.55;color:var(--suave)}
+.fer-aviso{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:var(--raio-m);background:var(--cor-bruma);color:var(--cor-mar);font-size:15px;max-width:60em}
+.fer-aviso svg{width:20px;height:20px;flex:none;margin-top:2px}
+.fer-rodape-linha{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:28px}
+.fer-rodape-linha img{width:166px}
+.fer-ident{color:var(--cor-mar)}
+.fer-rodape-links,.fer-rodape-nav ul{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:14px}
+.fer-rodape-links li,.fer-rodape-nav li{display:inline-flex;align-items:center}
+.fer-rodape-links li + li::before,.fer-rodape-nav li + li::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.4;margin-inline:12px}
+.fer-rodape a{color:var(--cor-salvia-funda)}
+.fer-rodape-nav{margin-top:6px;font-size:14px}
+@media (max-width:640px){
+  .fer-rodape-links{flex-direction:column;gap:8px;align-items:flex-start}
+  .fer-rodape-links li + li::before{display:none}
+  .fer-ident .pendente{white-space:nowrap}
+}
+.fer-rodape-nav a{color:var(--suave)}
+
+/* ------------------------------------------------------------ 11. barra fixa (celular) */
+.fer-barra{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  padding:10px var(--fer-gutter) calc(10px + env(safe-area-inset-bottom));
+  background:rgba(242,240,235,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--linha);box-shadow:0 -8px 24px -16px rgba(16,58,64,.35);
+  transform:translateY(110%);transition:transform var(--t-base) var(--mare);visibility:hidden;
+}
+.fer-barra .fer-botao{width:100%;min-height:52px}
+.fer-barra.on{transform:none;visibility:visible}
+@media (min-width:760px){.fer-barra{display:none}}
+
+/* ------------------------------------------------------------ 3. cadastro (dialog) */
+.fer-cadastro{
+  border:0;padding:0;margin:auto;background:transparent;color:var(--texto);
+  width:min(560px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);overflow:visible;
+}
+.fer-cadastro::backdrop{background:rgba(16,58,64,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.fer-cadastro-caixa{
+  position:relative;background:var(--cor-algodao);border-radius:28px;
+  padding:clamp(28px,4vw,44px);max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;
+  box-shadow:0 30px 80px -20px rgba(16,58,64,.45);
+}
+.fer-fechar{
+  position:absolute;right:14px;top:14px;width:44px;height:44px;border-radius:50%;border:0;
+  background:transparent;color:var(--cor-mar);display:grid;place-items:center;cursor:pointer;
+}
+.fer-fechar:hover{background:var(--cor-pedra)}
+.fer-fechar svg{width:22px;height:22px}
+.fer-passos{display:flex;gap:6px;margin-bottom:18px}
+.fer-passos span{width:28px;height:4px;border-radius:4px;background:var(--cor-pedra)}
+.fer-passos span.ativo{background:var(--cor-salvia-funda)}
+.fer-cadastro-titulo{font-size:clamp(27px,3vw,32px)!important;line-height:1.15!important;padding-right:40px}
+.fer-cadastro-titulo:focus{outline:none}
+.fer-cadastro-texto{margin-top:10px;font-size:17px;line-height:1.55}
+.fer-cadastro form{margin-top:22px;display:grid;gap:16px}
+.fer-campo label{display:block;font-weight:650;font-size:16px;color:var(--cor-mar);margin-bottom:6px}
+.fer-campo input{
+  width:100%;min-height:54px;padding:12px 16px;border-radius:var(--raio-m);
+  border:1.5px solid rgba(16,58,64,.28);background:#fff;color:var(--cor-grafite);
+  font:400 18px/1.3 var(--fonte-texto);transition:border-color var(--t-rapido),box-shadow var(--t-rapido);
+}
+.fer-campo input::placeholder{color:#7A8583}
+.fer-campo input:focus{outline:none;border-color:var(--cor-salvia-funda);box-shadow:0 0 0 4px rgba(99,175,156,.28)}
+.fer-campo input[aria-invalid="true"]{border-color:#A3402F}
+.fer-erro{margin-top:6px;font-size:15px;line-height:1.4;color:#8E3526;font-weight:600}
+.fer-erro[hidden]{display:none}
+.fer-mel{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fer-consent{display:grid;gap:12px;margin-top:4px}
+.fer-check{position:relative;display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5;cursor:pointer;padding:12px 14px;border-radius:var(--raio-m);background:#fff;border:1px solid var(--linha)}
+.fer-check input{position:absolute;opacity:0;width:24px;height:24px;margin:0;left:14px;top:12px}
+.fer-caixinha{width:24px;height:24px;flex:none;border-radius:7px;border:1.5px solid rgba(16,58,64,.45);background:#fff;display:grid;place-items:center;color:transparent;transition:background var(--t-rapido),border-color var(--t-rapido)}
+.fer-caixinha svg{width:16px;height:16px;stroke-width:2.4}
+.fer-check input:checked + .fer-caixinha{background:var(--cor-salvia-funda);border-color:var(--cor-salvia-funda);color:var(--cor-algodao)}
+.fer-check input:focus-visible + .fer-caixinha{outline:3px solid var(--cor-caramelo-tostado);outline-offset:2px}
+.fer-check input[aria-invalid="true"] + .fer-caixinha{border-color:#A3402F}
+.fer-tag{font-style:normal;font-size:14px;font-weight:650;letter-spacing:.04em;color:var(--suave);white-space:nowrap}
+.fer-apoio{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--suave)}
+.fer-apoio svg{width:18px;height:18px;flex:none;margin-top:1px}
+.fer-ok{margin:6px 0 18px}
+.fer-ok-traco{width:200px;color:var(--cor-mar)}
+.fer-botao-whats{margin-top:24px}
+.fer-aviso-previa-envio{margin-top:16px;font-size:14px;line-height:1.5;color:var(--suave);padding:12px 14px;border-radius:var(--raio-m);background:var(--cor-pedra)}
+.fer-aviso-previa-envio[hidden]{display:none}
+.fer-passo[hidden]{display:none}
+
+/* celular: painel que sobe de baixo e ocupa a tela */
+@media (max-width:640px){
+  .fer-cadastro{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;inset:0}
+  .fer-cadastro-caixa{min-height:100dvh;max-height:100dvh;border-radius:0;padding:22px 16px calc(28px + env(safe-area-inset-bottom))}
+  .fer-fechar{right:8px;top:10px}
+}
+
+/* ------------------------------------------------------------ toast */
+.fer-toast{
+  position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));z-index:60;transform:translate(-50%,20px);
+  width:max-content;max-width:calc(100vw - 32px);
+  background:var(--cor-mar);color:var(--cor-algodao);font-size:15px;line-height:1.45;
+  padding:12px 18px;border-radius:var(--raio-m);box-shadow:var(--sombra-cartao);
+  opacity:0;pointer-events:none;transition:opacity var(--t-base) var(--mare),transform var(--t-base) var(--mare);
+}
+.fer-toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ------------------------------------------------------------ movimento (traço que se desenha) */
+@media (prefers-reduced-motion:no-preference){
+  .js .anima-traco{clip-path:inset(-30% 100% -30% 0);transition:clip-path var(--t-traco) var(--mare)}
+  .js .anima-traco.visto{clip-path:inset(-30% -2% -30% 0)}
+  .js .fer-sobe{opacity:0;transform:translateY(18px);transition:opacity var(--t-entrada) var(--mare),transform var(--t-entrada) var(--mare)}
+  .js .fer-sobe.visto{opacity:1;transform:none}
+  .js .fer-cartoes .fer-sobe:nth-child(2){transition-delay:90ms}
+  .js .fer-cartoes .fer-sobe:nth-child(3){transition-delay:180ms}
+  .js .fer-frases .fer-sobe:nth-child(2){transition-delay:80ms}
+  .js .fer-frases .fer-sobe:nth-child(3){transition-delay:160ms}
+  .js .fer-frases .fer-sobe:nth-child(4){transition-delay:240ms}
+  .fer-cadastro[open]{animation:fer-entra .32s var(--mare)}
+  .fer-cadastro[open]::backdrop{animation:fer-fade .32s var(--mare)}
+  .fer-ok-traco{clip-path:inset(-30% 100% -30% 0);animation:fer-traco var(--t-traco) var(--mare) .15s forwards}
+  @media (max-width:640px){.fer-cadastro[open]{animation:fer-sobe-painel .38s var(--mare)}}
+}
+@keyframes fer-entra{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes fer-sobe-painel{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fer-fade{from{opacity:0}to{opacity:1}}
+@keyframes fer-traco{to{clip-path:inset(-30% -2% -30% 0)}}
+@media (prefers-reduced-motion:reduce){
+  .pg-ferro *,.pg-ferro *::before,.pg-ferro *::after{transition:none!important;animation:none!important}
+}
+
+/* ---- rodada 3: próximo passo depois da isca e ponte para a Avaliação */
+.fer-numeros-data{margin-top:12px;font-size:16px;color:var(--suave)}
+.fer-ponte{margin-top:clamp(24px,3vw,32px);padding:18px 20px;border-radius:var(--raio-m);background:var(--cor-algodao);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:17px;color:var(--cor-mar)}
+.fer-ponte .link-seta{color:var(--cor-salvia-funda)}
+.fer-proximo{margin-top:22px;padding-top:18px;border-top:1px solid var(--linha);display:grid;gap:10px;font-size:16px;line-height:1.55}
+.fer-proximo a{color:var(--cor-salvia-funda);font-weight:600}
+@media (max-width:360px){.fer-hero .fer-botao{font-size:16px;padding-inline:16px;gap:8px}.fer-hero .fer-botao .fer-seta{width:24px}}
